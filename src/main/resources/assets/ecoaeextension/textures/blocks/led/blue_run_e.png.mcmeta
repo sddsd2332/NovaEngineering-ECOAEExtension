@@ -1,0 +1,21 @@
+{
+    "animation": {
+        "frametime": 3
+    },
+    "ctm": {
+        "ctm_version": 1,
+        "layer": "BLOOM",
+        "gregtech": true,
+        "extra": {
+            "light": 15
+        }
+    },
+    "ctm": {
+        "ctm_version": 1,
+        "layer": "BLOOM",
+        "gregtech": true,
+        "extra": {
+            "light": 15
+        }
+    }
+}

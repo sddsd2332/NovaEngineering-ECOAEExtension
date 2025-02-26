@@ -1,0 +1,24 @@
+{
+    "package": "github.kasuminova.ecoaeextension.mixin.ae2",
+    "refmap": "mixins.novaeng_ecoaeextension.refmap.json",
+    "target": "@env(DEFAULT)",
+    "minVersion": "0.8",
+    "compatibilityLevel": "JAVA_8",
+    "client": [
+        "MixinGuiCraftingStatus",
+        "MixinGuiPatternTerm"
+    ],
+    "server": [
+        "MixinPacketInventoryAction"
+    ],
+    "mixins": [
+        "AccessorAbstractCellInventory",
+        "AccessorCellRegistry",
+        "AccessorContainerPatternEncoder",
+        "MixinCraftingCPUCluster",
+        "MixinCraftingCPUStatus",
+        "MixinCraftingGridCache",
+        "MixinTileChestFilter",
+        "MixinTileDriveFilter"
+    ]
+}

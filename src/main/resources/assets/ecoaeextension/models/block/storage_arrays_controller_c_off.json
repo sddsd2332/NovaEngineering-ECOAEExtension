@@ -1,0 +1,80 @@
+{
+    "credit": "Made with Blockbench",
+    "textures": {
+        "0": "ecoaeextension:blocks/storage_array_housing",
+        "3": "ecoaeextension:blocks/storage_array_vents_a",
+        "5": "ecoaeextension:blocks/data_bus_a3",
+        "7": "ecoaeextension:blocks/storage_arrays_controller_c_off",
+        "particle": "ecoaeextension:blocks/storage_array_housing"
+    },
+    "elements": [
+        {
+            "from": [
+                0,
+                0,
+                0
+            ],
+            "to": [
+                16,
+                16,
+                16
+            ],
+            "faces": {
+                "north": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#7"
+                },
+                "east": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#5"
+                },
+                "south": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#3"
+                },
+                "west": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#5"
+                },
+                "up": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#0"
+                },
+                "down": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#0"
+                }
+            }
+        }
+    ]
+}

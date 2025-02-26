@@ -1,0 +1,25 @@
+{
+  "modListVersion": 2,
+  "modList": [
+    {
+      "modid": "ecoaeextension",
+      "name": "Nova Engineering - ECO AE Extension",
+      "description": "新星工程计划 - AE - 存储 - 合成 - 处理 三件套",
+      "version": "${version}",
+      "mcversion": "${mcversion}",
+      "url": "https://github.com/sddsd2332/NovaEngineering-ECOAEExtension",
+      "updateUrl": "",
+      "authorList": [
+        "Kasumi_Nova",
+        "sddsd2332",
+        "WI_8614_ice"
+      ],
+      "credits": "",
+      "logoFile": "assets/ecoaeextension/logo.png",
+      "screenshots": [],
+      "dependencies": [],
+      "requiredMods": [],
+      "useDependencyInformation": true
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "ecoaeextension:items/estorage_cell_disks_c3_fluid_256m",
+        "layer1": "ecoaeextension:items/bloom/estorage_cell_disks_c3_fluid_256m"
+    }
+}

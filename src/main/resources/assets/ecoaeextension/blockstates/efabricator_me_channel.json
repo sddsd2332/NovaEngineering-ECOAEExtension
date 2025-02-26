@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:module_molecular_assembly_matrix/carbon_fiber_mechanical_me_port"
+    },
+    "variants": {
+        "facing=north": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/carbon_fiber_mechanical_me_port"
+        },
+        "facing=south": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/carbon_fiber_mechanical_me_port",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/carbon_fiber_mechanical_me_port",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/carbon_fiber_mechanical_me_port",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

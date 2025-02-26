@@ -1,0 +1,430 @@
+{
+    "multipart": [
+        {
+            "when": {
+                "facing": "north",
+                "link": "none",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_all_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "up",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "down",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "none",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_all_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "up",
+                "link_level": "l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_down_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "down",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_up_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "none",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_all_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "up",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_down_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "down",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_up_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "none",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_all_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "up",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_down_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "down",
+                "link_level": "none|l4"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l4_superconducting_cooled_transmission_bus_up_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "none",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_all_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "up",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "down",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_up_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "none",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_all_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "up",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_down_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "down",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_up_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "none",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_all_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "up",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_down_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "down",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_up_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "none",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_all_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "up",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_down_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "down",
+                "link_level": "l6"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l6_superconducting_cooled_transmission_bus_up_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "none",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_all_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "up",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "down",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_up_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "none",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_all_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "up",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_down_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "down",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_up_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "none",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_all_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "up",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_down_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "down",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_up_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "none",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_all_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "up",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_down_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "down",
+                "link_level": "l9"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/l9_superconducting_cooled_transmission_bus_up_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "link": "all"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/superconducting_cooled_transmission_bus_all_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "link": "all"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/superconducting_cooled_transmission_bus_all_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "link": "all"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/superconducting_cooled_transmission_bus_all_on",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "link": "all"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/superconducting_cooled_transmission_bus/superconducting_cooled_transmission_bus_all_on",
+                "y": 270
+            }
+        }
+    ]
+}

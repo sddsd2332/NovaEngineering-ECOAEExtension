@@ -1,0 +1,58 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/on/l4_hyper_threading_module"
+    },
+    "variants": {
+        "facing=north,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/off/l4_hyper_threading_module"
+        },
+        "facing=south,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/off/l4_hyper_threading_module",
+            "y": 180
+        },
+        "facing=west,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/off/l4_hyper_threading_module",
+            "y": 270
+        },
+        "facing=east,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/off/l4_hyper_threading_module",
+            "y": 90
+        },
+        "facing=north,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/on/l4_hyper_threading_module"
+        },
+        "facing=south,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/on/l4_hyper_threading_module",
+            "y": 180
+        },
+        "facing=west,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/on/l4_hyper_threading_module",
+            "y": 270
+        },
+        "facing=east,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/on/l4_hyper_threading_module",
+            "y": 90
+        },
+        "facing=north,status=run": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/run/l4_hyper_threading_module"
+        },
+        "facing=south,status=run": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/run/l4_hyper_threading_module",
+            "y": 180
+        },
+        "facing=west,status=run": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/run/l4_hyper_threading_module",
+            "y": 270
+        },
+        "facing=east,status=run": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/thread_module/run/l4_hyper_threading_module",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

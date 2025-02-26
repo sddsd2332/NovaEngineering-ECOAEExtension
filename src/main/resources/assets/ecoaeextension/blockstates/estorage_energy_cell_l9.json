@@ -1,0 +1,88 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_empty"
+    },
+    "variants": {
+        "facing=north,status=empty": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_empty"
+        },
+        "facing=south,status=empty": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_empty",
+            "y": 180
+        },
+        "facing=west,status=empty": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_empty",
+            "y": 270
+        },
+        "facing=east,status=empty": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_empty",
+            "y": 90
+        },
+        "facing=north,status=low": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_low"
+        },
+        "facing=south,status=low": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_low",
+            "y": 180
+        },
+        "facing=west,status=low": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_low",
+            "y": 270
+        },
+        "facing=east,status=low": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_low",
+            "y": 90
+        },
+        "facing=north,status=mid": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_mid"
+        },
+        "facing=south,status=mid": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_mid",
+            "y": 180
+        },
+        "facing=west,status=mid": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_mid",
+            "y": 270
+        },
+        "facing=east,status=mid": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_mid",
+            "y": 90
+        },
+        "facing=north,status=high": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_high"
+        },
+        "facing=south,status=high": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_high",
+            "y": 180
+        },
+        "facing=west,status=high": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_high",
+            "y": 270
+        },
+        "facing=east,status=high": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_high",
+            "y": 90
+        },
+        "facing=north,status=full": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_full"
+        },
+        "facing=south,status=full": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_full",
+            "y": 180
+        },
+        "facing=west,status=full": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_full",
+            "y": 270
+        },
+        "facing=east,status=full": {
+            "model": "ecoaeextension:estorage_energy_cell/storage_array_capacitance_c/storage_array_capacitance_c_full",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

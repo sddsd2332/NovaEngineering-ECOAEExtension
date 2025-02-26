@@ -1,0 +1,93 @@
+{
+    "credit": "Made with Blockbench",
+    "textures": {
+        "0": "ecoaeextension:blocks/storage_array_housing",
+        "1": "ecoaeextension:blocks/storage_array_vents_a",
+        "2": "ecoaeextension:blocks/storage_array_vents_b",
+        "3": "ecoaeextension:blocks/data_bus_c",
+        "particle": "ecoaeextension:blocks/storage_array_housing"
+    },
+    "elements": [
+        {
+            "from": [
+                0,
+                0,
+                0
+            ],
+            "to": [
+                16,
+                16,
+                16
+            ],
+            "faces": {
+                "north": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#2"
+                },
+                "east": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#3"
+                },
+                "south": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#1"
+                },
+                "west": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#3"
+                },
+                "up": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#0"
+                },
+                "down": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#0"
+                }
+            }
+        }
+    ],
+    "groups": [
+        {
+            "name": "bone",
+            "origin": [
+                0,
+                0,
+                0
+            ],
+            "color": 0,
+            "children": []
+        },
+        0
+    ]
+}

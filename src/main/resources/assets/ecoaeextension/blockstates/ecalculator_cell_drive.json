@@ -1,0 +1,775 @@
+{
+    "multipart": [
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "empty"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_empty"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "a|b|c"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_full"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "empty"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_empty",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a|b|c"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_full",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "empty"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_empty",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a|b|c"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_full",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "empty"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_empty",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "a|b|c"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_drives_full",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "a",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l4_synthetic_storage_matrix_off_line"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "b",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l6_synthetic_storage_matrix_off_line"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "c",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l9_synthetic_storage_matrix_off_line"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l4_synthetic_storage_matrix_off_line",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "b",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l6_synthetic_storage_matrix_off_line",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "c",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l9_synthetic_storage_matrix_off_line",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l4_synthetic_storage_matrix_off_line",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "b",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l6_synthetic_storage_matrix_off_line",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "c",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l9_synthetic_storage_matrix_off_line",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "a",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l4_synthetic_storage_matrix_off_line",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "b",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l6_synthetic_storage_matrix_off_line",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "c",
+                "link": "none"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off_line/l9_synthetic_storage_matrix_off_line",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "a",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "b",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "c",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_down_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_down_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "b",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_down_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "c",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_down_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_down_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "b",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_down_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "c",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_down_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "a",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_down_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "b",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_down_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "c",
+                "status": "off",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_down_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "a",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_up_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "b",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_up_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "c",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_up_off"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_up_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "b",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_up_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "c",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_up_off",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_up_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "b",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_up_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "c",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_up_off",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "a",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l4_synthetic_storage_matrix_up_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "b",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l6_synthetic_storage_matrix_up_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "c",
+                "status": "off",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/off/l9_synthetic_storage_matrix_up_off",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "a",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_down_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "b",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_down_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "c",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_down_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_down_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "b",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_down_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "c",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_down_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_down_on",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "b",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_down_on",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "c",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_down_on",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "a",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_down_on",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "b",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_down_on",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "c",
+                "status": "on",
+                "link": "up"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_down_on",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "a",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_up_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "b",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_up_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "c",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_up_on"
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_up_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "b",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_up_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "c",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_up_on",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_up_on",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "b",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_up_on",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "c",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_up_on",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "a",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l4_synthetic_storage_matrix_up_on",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "b",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l6_synthetic_storage_matrix_up_on",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "c",
+                "status": "on",
+                "link": "down"
+            },
+            "apply": {
+                "model": "ecoaeextension:ec_modular_synthetic_memory/synthetic_storage_drives/synthetic_storage_matrix/on/l9_synthetic_storage_matrix_up_on",
+                "y": 90
+            }
+        }
+    ]
+}

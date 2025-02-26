@@ -1,0 +1,22 @@
+{
+	"credit": "Made with WI_8614_ice",
+	"textures": {
+		"1": "ecoaeextension:blocks/bloom/module_molecular_assembly_drivers_led/drivers_active"
+	},
+	"elements": [
+		{
+			"name": "bloom",
+			"from": [5, 2, -0.25],
+			"to": [7, 4, 0.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 3, 0]},
+			"faces": {
+				"north": {"uv": [11, 12, 13, 14], "texture": "#1"},
+				"east": {"uv": [11, 12, 12, 14], "texture": "#1"},
+				"south": {"uv": [13, 12, 11, 14], "texture": "#1"},
+				"west": {"uv": [12, 14, 13, 12], "texture": "#1"},
+				"up": {"uv": [13, 12, 11, 13], "texture": "#1"},
+				"down": {"uv": [13, 13, 11, 14], "texture": "#1"}
+			}
+		}
+	]
+}

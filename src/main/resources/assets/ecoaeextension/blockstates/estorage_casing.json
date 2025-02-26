@@ -1,0 +1,16 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:estorage_casing"
+    },
+    "variants": {
+        "normal": {
+            "model": "ecoaeextension:estorage_casing"
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

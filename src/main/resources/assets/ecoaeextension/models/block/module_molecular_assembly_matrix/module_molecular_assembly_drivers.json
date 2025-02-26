@@ -1,0 +1,214 @@
+{
+	"credit": "Made with WI_8614_ice",
+	"texture_size": [256, 256],
+	"textures": {
+		"0": "ecoaeextension:blocks/module_molecular_assembly_matrix",
+		"particle": "ecoaeextension:blocks/module_molecular_assembly_matrix"
+	},
+	"elements": [
+		{
+			"name": "module_molecular_assembly_drivers",
+			"from": [0, 0, 0],
+			"to": [16, 3, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [148, 0, -8]},
+			"faces": {
+				"north": {"uv": [12.875, 7.625, 13.875, 7.8125], "texture": "#0"},
+				"east": {"uv": [5.3125, 10.5, 6.3125, 10.6875], "texture": "#0"},
+				"south": {"uv": [13.25, 14.75, 14.25, 14.9375], "texture": "#0"},
+				"west": {"uv": [6.3125, 10.5, 5.3125, 10.6875], "texture": "#0"},
+				"up": {"uv": [14.3125, 14.75, 15.3125, 14.9375], "texture": "#0"},
+				"down": {"uv": [14.3125, 14.75, 15.3125, 14.9375], "texture": "#0"}
+			}
+		},
+		{
+			"name": "module_molecular_assembly_drivers",
+			"from": [0, 3, 0],
+			"to": [11, 13, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [148, 3, -8]},
+			"faces": {
+				"north": {"uv": [13.1875, 7, 13.875, 7.625], "texture": "#0"},
+				"east": {"uv": [5.625, 9.875, 6.3125, 10.5], "texture": "#0"},
+				"south": {"uv": [14.25, 14.125, 13.5625, 14.75], "texture": "#0"},
+				"west": {"uv": [6.3125, 9.875, 5.3125, 10.5], "texture": "#0"},
+				"up": {"uv": [14.625, 14.125, 15.3125, 14.75], "texture": "#0"},
+				"down": {"uv": [14.625, 14.125, 15.3125, 14.75], "texture": "#0"}
+			}
+		},
+		{
+			"name": "module_molecular_assembly_drivers",
+			"from": [13, 3, 0],
+			"to": [16, 13, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [161, 3, -8]},
+			"faces": {
+				"north": {"uv": [12.875, 7, 13, 7.625], "texture": "#0"},
+				"east": {"uv": [5.3125, 9.875, 6.3125, 10.5], "texture": "#0"},
+				"south": {"uv": [13.4375, 14.125, 13.25, 14.75], "texture": "#0"},
+				"west": {"uv": [5.3125, 9.875, 6.3125, 10.5], "texture": "#0"},
+				"up": {"uv": [14.625, 14.125, 15.3125, 14.3125], "texture": "#0"},
+				"down": {"uv": [14.625, 14.125, 15.3125, 14.3125], "texture": "#0"}
+			}
+		},
+		{
+			"name": "module_molecular_assembly_drivers",
+			"from": [11, 3, 1],
+			"to": [13, 13, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [159, 3, -7]},
+			"faces": {
+				"north": {"uv": [12.875, 7, 13, 7.625], "texture": "#0"},
+				"east": {"uv": [13.25, 14.125, 14.25, 14.75], "texture": "#0"},
+				"south": {"uv": [13.5625, 14.125, 13.4375, 14.75], "texture": "#0"},
+				"west": {"uv": [13.25, 14.125, 14.25, 14.75], "texture": "#0"},
+				"up": {"uv": [14.625, 14.125, 15.3125, 14.375], "texture": "#0"},
+				"down": {"uv": [14.625, 14.125, 15.3125, 14.375], "texture": "#0"}
+			}
+		},
+		{
+			"name": "module_molecular_assembly_drivers",
+			"from": [0, 13, 0],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [148, 13, -8]},
+			"faces": {
+				"north": {"uv": [12.875, 6.8125, 13.875, 7], "texture": "#0"},
+				"east": {"uv": [5.3125, 9.6875, 6.3125, 9.875], "texture": "#0"},
+				"south": {"uv": [13.25, 13.9375, 14.25, 14.125], "texture": "#0"},
+				"west": {"uv": [6.3125, 9.6875, 5.3125, 9.875], "texture": "#0"},
+				"up": {"uv": [14.3125, 13.9375, 15.3125, 14.9375], "texture": "#0"},
+				"down": {"uv": [14.3125, 13.9375, 15.3125, 14.9375], "texture": "#0"}
+			}
+		},
+		{
+			"from": [11, 3, -0.25],
+			"to": [13, 13, 0],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 7, 8]},
+			"faces": {
+				"north": {"uv": [13.875, 7.1875, 14, 7.8125], "texture": "#0"},
+				"east": {"uv": [13.875, 7.1875, 13.9375, 7.8125], "texture": "#0"},
+				"south": {"uv": [14, 6.5625, 13.875, 7.1875], "texture": "#0"},
+				"west": {"uv": [13.875, 7.8125, 13.9375, 7.1875], "texture": "#0"},
+				"up": {"uv": [14, 7.1875, 13.875, 7.25], "texture": "#0"},
+				"down": {"uv": [13.875, 7.1875, 14, 7.25], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 5, -0.05],
+			"to": [9, 14, 0.45],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 9, 8.2]},
+			"faces": {
+				"north": {"uv": [14.4375, 6.9375, 14.875, 7.5], "texture": "#0"},
+				"east": {"uv": [14.4375, 6.9375, 14.5, 7.5], "texture": "#0"},
+				"south": {"uv": [14.875, 6.9375, 14.4375, 7.5], "texture": "#0"},
+				"west": {"uv": [14.8125, 7.5, 14.875, 6.9375], "texture": "#0"},
+				"up": {"uv": [14.875, 6.9375, 14.4375, 7], "texture": "#0"},
+				"down": {"uv": [14.4375, 7.4375, 14.875, 7.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 6, -0.15],
+			"to": [9, 13, 0.35],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 10, 8.1]},
+			"faces": {
+				"north": {"uv": [14.4375, 7, 14.875, 7.4375], "texture": "#0"},
+				"east": {"uv": [14.4375, 7, 14.5, 7.4375], "texture": "#0"},
+				"south": {"uv": [14.875, 7, 14.4375, 7.4375], "texture": "#0"},
+				"west": {"uv": [14.8125, 7.4375, 14.875, 7], "texture": "#0"},
+				"up": {"uv": [14.875, 7, 14.4375, 7.0625], "texture": "#0"},
+				"down": {"uv": [14.4375, 7.375, 14.875, 7.4375], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3, 5, -0.15],
+			"to": [8, 14, 0.35],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 9, 8.1]},
+			"faces": {
+				"north": {"uv": [14.5, 6.9375, 14.8125, 7.5], "texture": "#0"},
+				"east": {"uv": [14.5, 6.9375, 14.5625, 7.5], "texture": "#0"},
+				"south": {"uv": [14.8125, 6.9375, 14.5, 7.5], "texture": "#0"},
+				"west": {"uv": [14.75, 7.5, 14.8125, 6.9375], "texture": "#0"},
+				"up": {"uv": [14.8125, 6.9375, 14.5, 7], "texture": "#0"},
+				"down": {"uv": [14.5, 7.4375, 14.8125, 7.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [
+				75,
+				315,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				315,
+				0
+			],
+			"scale": [
+				0.4,
+				0.4,
+				0.4
+			]
+		},
+		"ground": {
+			"translation": [
+				0,
+				3,
+				0
+			],
+			"scale": [
+				0.25,
+				0.25,
+				0.25
+			]
+		},
+		"gui": {
+			"rotation": [
+				30,
+				-135,
+				0
+			],
+			"scale": [
+				0.625,
+				0.625,
+				0.625
+			]
+		},
+		"head": {
+			"rotation": [
+				0,
+				180,
+				0
+			]
+		},
+		"fixed": {
+			"rotation": [
+				0,
+				180,
+				0
+			],
+			"scale": [
+				0.5,
+				0.5,
+				0.5
+			]
+		}
+	},
+	"groups": [
+		{
+			"name": "module_molecular_assembly_drivers",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+		}
+	]
+}

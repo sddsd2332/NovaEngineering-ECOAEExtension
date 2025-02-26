@@ -1,0 +1,148 @@
+{
+    "credit": "Made with Blockbench",
+    "textures": {
+        "1": "ecoaeextension:blocks/0",
+        "2": "ecoaeextension:blocks/bloom/storage_array_drives_c0_off_fluid",
+        "6": "ecoaeextension:blocks/storage_array_drives_c0_off_fluid",
+        "particle": "ecoaeextension:blocks/0"
+    },
+    "elements": [
+        {
+            "from": [
+                2,
+                2,
+                0.5
+            ],
+            "to": [
+                8,
+                14,
+                11
+            ],
+            "faces": {
+                "north": {
+                    "uv": [
+                        8,
+                        2,
+                        14,
+                        14
+                    ],
+                    "texture": "#6"
+                },
+                "east": {
+                    "uv": [
+                        8,
+                        2,
+                        9,
+                        14
+                    ],
+                    "texture": "#6"
+                },
+                "south": {
+                    "uv": [
+                        14,
+                        2,
+                        8,
+                        3
+                    ],
+                    "texture": "#6"
+                },
+                "west": {
+                    "uv": [
+                        13,
+                        2,
+                        14,
+                        14
+                    ],
+                    "texture": "#6"
+                },
+                "up": {
+                    "uv": [
+                        14,
+                        2,
+                        8,
+                        3
+                    ],
+                    "texture": "#6"
+                },
+                "down": {
+                    "uv": [
+                        14,
+                        13,
+                        8,
+                        14
+                    ],
+                    "texture": "#6"
+                }
+            }
+        },
+        {
+            "name": "bloom",
+            "from": [
+                2,
+                2,
+                0.5
+            ],
+            "to": [
+                8,
+                14,
+                11
+            ],
+            "faces": {
+                "north": {
+                    "uv": [
+                        8,
+                        2,
+                        14,
+                        14
+                    ],
+                    "texture": "#2"
+                },
+                "east": {
+                    "uv": [
+                        8,
+                        2,
+                        9,
+                        14
+                    ],
+                    "texture": "#1"
+                },
+                "south": {
+                    "uv": [
+                        14,
+                        2,
+                        8,
+                        3
+                    ],
+                    "texture": "#1"
+                },
+                "west": {
+                    "uv": [
+                        13,
+                        2,
+                        14,
+                        14
+                    ],
+                    "texture": "#1"
+                },
+                "up": {
+                    "uv": [
+                        14,
+                        2,
+                        8,
+                        3
+                    ],
+                    "texture": "#1"
+                },
+                "down": {
+                    "uv": [
+                        14,
+                        13,
+                        8,
+                        14
+                    ],
+                    "texture": "#1"
+                }
+            }
+        }
+    ]
+}

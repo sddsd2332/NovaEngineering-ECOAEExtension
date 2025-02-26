@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:estorage_vent"
+    },
+    "variants": {
+        "facing=north": {
+            "model": "ecoaeextension:estorage_vent"
+        },
+        "facing=south": {
+            "model": "ecoaeextension:estorage_vent",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "ecoaeextension:estorage_vent",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "ecoaeextension:estorage_vent",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

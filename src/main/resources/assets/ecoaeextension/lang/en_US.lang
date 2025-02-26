@@ -1,0 +1,246 @@
+item.ecoaeextension.estorage_cell_item_16m.name=§9ECO - §bLE4 §9存储矩阵§a（物品）
+item.ecoaeextension.estorage_cell_item_64m.name=§9ECO - §6LE6 §9存储矩阵§a（物品）
+item.ecoaeextension.estorage_cell_item_256m.name=§9ECO - §5LE9 §9存储矩阵§a（物品）
+
+item.ecoaeextension.estorage_cell_fluid_16m.name=§9ECO - §bLE4 §9存储矩阵§b（流体）
+item.ecoaeextension.estorage_cell_fluid_64m.name=§9ECO - §6LE6 §9存储矩阵§b（流体）
+item.ecoaeextension.estorage_cell_fluid_256m.name=§9ECO - §5LE9 §9存储矩阵§b（流体）
+
+item.ecoaeextension.ecalculator_cell_64m.name=§9ECO - §bCE4 §b闪存晶阵
+item.ecoaeextension.ecalculator_cell_1024m.name=§9ECO - §6CE6 §b闪存晶阵
+item.ecoaeextension.ecalculator_cell_16384m.name=§9ECO - §5CE9 §b闪存晶阵
+
+novaeng.ecalculator_cell.insert.tip=蹲下时手持矩阵并右击驱动器以插入晶阵。
+novaeng.ecalculator_cell.extract.tip=蹲下时空手并右击驱动器以取出晶阵。
+novaeng.ecalculator_cell.tip.0=§b闪存晶阵§7为§9计算子系统§7提供§a内存存储§7。
+novaeng.ecalculator_cell.tip.1=§b闪存晶阵§7是存储矩阵的高速存取特化版本。
+novaeng.ecalculator_cell.tip.2=相比§9存储矩阵§7，其内部规模要§a更加宏大§7，但作为代价，其存储容量也远§c不如§9存储矩阵§7。
+novaeng.ecalculator_cell.tip.3=§b字节数提供：§a%sB
+novaeng.ecalculator_cell.l6.tip=§c只有 §6C6§c 等级及以上的主机可以驱动此晶阵。
+novaeng.ecalculator_cell.l9.tip=§c只有 §6C9§c 等级的主机可以驱动此晶阵。
+
+novaeng.estorage_cell.insert.tip=蹲下时§a手持矩阵并右击§7驱动器以插入矩阵。
+novaeng.estorage_cell.extract.tip=蹲下时§a空手并右击§7驱动器以取出矩阵。
+novaeng.estorage_cell.l6.tip=§c只有 §6L6§c 等级及以上的主机可以驱动此矩阵。
+novaeng.estorage_cell.l9.tip=§c只有 §6L9§c 等级的主机可以驱动此矩阵。
+
+novaeng.estorage_cell_drive.player.inserted=§a已插入存储矩阵。
+novaeng.estorage_cell_drive.player.removed=§a已取出存储矩阵。
+novaeng.estorage_cell_drive.player.no_permission=§c访问被拒绝（原因：无 ME 网络权限）。
+
+novaeng.ecalculator_thread_core.info.0=§b线程核心§7是计算子系统的主要部分，为主机提供§5线程数§7。
+novaeng.ecalculator_thread_core.info.1=§b线程核心§7提供的§9线程§7为子系统提供最大§b虚拟合成处理器（vCPU）§7数量。
+novaeng.ecalculator_thread_core.info.2=拆除时会直接§a保存压缩后的 CPU 数据至掉落物§7。
+novaeng.ecalculator_thread_core.modifiers=§b线程数§7修正：
+novaeng.ecalculator_thread_core.modifier.add=  最大线程数：§a+%s
+
+novaeng.ecalculator_thread_core_hyper.info.0=§9超线程核心§7相比§b线程核心§7，能为主机提供§a更多§7的§5线程数§7。
+novaeng.ecalculator_thread_core_hyper.info.1=作为代价，每个§a合成任务§7需要的字节数会§c更多§7（§c+10%%§7）。
+novaeng.ecalculator_thread_core_hyper.info.2=主机会优先使用§b普通线程§7而不是§9超线程§7。
+novaeng.ecalculator_thread_core_hyper.modifier.add=  最大超线程数：§a+%s
+
+novaeng.ecalculator_parallel_proc.info.0=§5并行核心§7为计算子系统提供§5并行数§7。
+novaeng.ecalculator_parallel_proc.info.1=§5并行数§7可提高§a所有§b线程核心§7每次处理合成任务的§a处理数量§7。
+novaeng.ecalculator_parallel_proc.modifiers=§5并行数§7修正：
+novaeng.ecalculator_parallel_proc.modifier.add=  最大并行数：§a+%s
+
+novaeng.ecalculator_cell_drive.info.0=§b晶阵驱动器§7为计算子系统提供§b闪存晶阵§7的存储空间。
+novaeng.ecalculator_cell_drive.info.1=§b晶阵驱动器§7能够驱动的晶阵等级取决于主机的§5等级§7。
+novaeng.ecalculator_cell_drive.player.inserted=§a已插入闪存晶阵。
+novaeng.ecalculator_cell_drive.player.removed=§a已取出闪存晶阵。
+novaeng.ecalculator_cell_drive.player.no_permission=§c访问被拒绝（原因：无 ME 网络权限）。
+
+novaeng.extendable_storage_subsystem.info.0=整个§9存储子系统§7的§a核心§7。
+novaeng.extendable_storage_subsystem.info.1=最大长度：§a12
+novaeng.extendable_fabricator_subsystem.info.0=整个§e合成子系统§7的§a核心§7。
+novaeng.extendable_fabricator_subsystem.info.1=最大长度：§a12
+novaeng.extendable_calculate_subsystem.info.0=整个§b计算子系统§7的§a核心§7。
+novaeng.extendable_calculate_subsystem.info.1=最大长度：§a12
+novaeng.extendable_calculate_subsystem.info.2=计算子系统引入了§b虚拟合成处理器§7的设定（简称 §bvCPU§7），通过 ME 通讯接口来访问。
+novaeng.extendable_calculate_subsystem.info.3=§b虚拟合成处理器（vCPU）§7：
+novaeng.extendable_calculate_subsystem.info.4=  主机每次只向 ME 网络提供一个 §bvCPU§7，其容量为子系统当前所有可用的字节数。
+novaeng.extendable_calculate_subsystem.info.5=  每当用户发配合成任务给 §bvCPU§7 时，主机会自动调节 §bvCPU§7 的字节数至任务所需的字节数，然后将其分配给§b线程核心§7。
+novaeng.extendable_calculate_subsystem.info.6=  分配完成后，如果系统当前可用字节数大于 §e10%%§7，则会自动分配新的 §bvCPU§7，否则§c停止分配§7，直到可用字节数大于 §e10%%§7。
+novaeng.extendable_calculate_subsystem.info.7=  只要系统中已分配的 §bvCPU§7 数不超过§e最大线程数§7，则可以一直分配新的 §bvCPU§7，直到上限。
+novaeng.extendable_calculate_subsystem.info.8=  §bvCPU§7 会在合成任务完成后，并且§e物品全部返还§7时§a立刻销毁§7。
+
+novaeng.efabricator_parallel_proc.info.0=§5并行核心§7为合成子系统提供§5并行数§7。
+novaeng.efabricator_parallel_proc.info.1=§5并行数§7可提高§b工作核心§7每次处理合成任务的§a处理数量§7（最大不超过队列深度）。
+novaeng.efabricator_parallel_proc.modifiers=§5并行数§7修正：
+novaeng.efabricator_parallel_proc.overclock_modifiers=启用§c超频§7时：
+novaeng.efabricator_parallel_proc.modifier.add=最大并行数：§a+%s
+novaeng.efabricator_parallel_proc.modifier.sub=最大并行数修正：§c-%s
+novaeng.efabricator_parallel_proc.modifier.mul=最大并行数修正：§a+%s%%
+novaeng.efabricator_parallel_proc.modifier.mul.debuff=最大并行数修正：§c-%s%%
+novaeng.efabricator_parallel_proc.info.2=启用§9主动冷却§7时：
+novaeng.efabricator_parallel_proc.info.3=  §a消除§7超频的§c负面§7修正。
+novaeng.efabricator_parallel_proc.info.4=  工作后溢出的并行数转换为工作间隔§a减成§7并消耗§9冷却液§7，最低不低于 §b1§7 Tick（§b0.05s§7）。
+novaeng.efabricator_parallel_proc.info.5=    每溢出 §e5%%§7 最大并行数，为子系统降低 §b1§7 Tick（§b0.05s§7）的工作间隔。
+novaeng.efabricator_parallel_proc.info.6=    每降低 §b1§7 Tick（§b0.05s§7）工作间隔，额外消耗 §c最大并行数 * 4%%§7 冷却单位。
+
+novaeng.efabricator_worker.info.0=§b工作核心§7是合成子系统的§e主要部分§7。
+novaeng.efabricator_worker.info.1=每个核心带有 §a32§7 队列深度，每次工作处理 §a1§7 个合成任务。
+novaeng.efabricator_worker.info.2=每次合成能量消耗：§b100 AE
+novaeng.efabricator_worker.info.3=启用§c超频§7时：
+novaeng.efabricator_worker.info.4=  队列深度 §ax2 §b(F4)
+novaeng.efabricator_worker.info.5=  队列深度 §ax4 §6(F6)
+novaeng.efabricator_worker.info.6=  队列深度 §ax8 §5(F9)
+novaeng.efabricator_worker.info.7=  能量消耗 §cx4 §b(F4)
+novaeng.efabricator_worker.info.8=  能量消耗 §cx8 §6(F6)
+novaeng.efabricator_worker.info.9=  能量消耗 §cx16 §5(F9)
+novaeng.efabricator_worker.info.10=启用§9主动冷却§7时：
+novaeng.efabricator_worker.info.11=  §a消除§7超频的§c负面§7修正。
+novaeng.efabricator_worker.info.12=  每次合成额外消耗 §c5§7 冷却单位。
+novaeng.efabricator_worker.info.13=  每个工作核心为子系统降低 §b1§7 Tick（§b0.05s§7）的工作间隔，最低不低于 §b10§7 Tick（§b0.5s§7）。
+
+novaeng.efabricator_pattern_bus.info.0=§e样板总线§7是合成子系统的§e主要部分§7。
+novaeng.efabricator_pattern_bus.info.1=§e样板总线§7为子系统储存§b样板§7，每个总线有 §a72§7 格样板槽位。
+novaeng.efabricator_pattern_bus.info.2=兼容 §b合成样板§7 / §a流体装配室合成样板§7，§c不兼容其他样板§7（如处理模式样板）。
+novaeng.efabricator_pattern_bus.info.3=在 ME 样板终端编写§e合成样板§7时可使用§b快速上传§7。
+novaeng.efabricator_pattern_bus.info.4=  网络中§c必须§7存在§a在线§7的子系统。
+novaeng.efabricator_pattern_bus.info.5=  子系统中§c必须§7至少存在 §b1§7 个有样板空位的§e样板总线§7。
+
+novaeng.efabricator_me_channel.info.0=§9矩阵通讯接口§7是子系统与 ME 网络之间的§b协议兼容层§7。
+novaeng.efabricator_me_channel.info.1=  §9通讯接口§7向 ME 网络提供样板核心的访问权限。
+novaeng.efabricator_me_channel.info.2=  子系统只能通过§9通讯接口§7获取能源。
+novaeng.efabricator_me_channel.info.3=通过连接 ME 线缆至§9通讯接口§7以和子系统建立连接。
+
+novaeng.ecalculator_me_channel.info.0=§9矩阵通讯接口§7是子系统与 ME 网络之间的§b协议兼容层§7。
+novaeng.ecalculator_me_channel.info.1=  §9通讯接口§7向 ME 网络提供§b虚拟合成处理器§7。
+novaeng.ecalculator_me_channel.info.2=  此子系统§a不消耗§7额外能源。
+novaeng.ecalculator_me_channel.info.3=通过连接 ME 线缆至§9通讯接口§7以和子系统建立连接。
+
+
+top.estorage.drive.status=§9驱动器状态：
+top.estorage.drive.status.offline=§c离线
+top.estorage.drive.status.online=§a在线
+top.estorage.drive.cell=§9驱动器矩阵：
+top.estorage.drive.cell.unsupported=§c警告：驱动器不支持此矩阵等级，需要升级主机。
+top.estorage.drive.cell.bytes=§9字节使用：
+top.estorage.drive.cell.types=§9类型使用：
+
+top.efabricator.worker.status=§9工作核心状态：
+top.efabricator.worker.status.offline=§c离线
+top.efabricator.worker.status.online=§a在线
+top.efabricator.worker.queue_status=§9队列状态：
+top.efabricator.worker.current_crafting=§9正在合成：
+top.efabricator.worker.enqueued_crafting=§9排队中：
+
+top.ecalculator.controller.storage=§9字节使用：
+top.ecalculator.controller.threads=§9线程状态：
+top.ecalculator.controller.parallelism=§9共享并行数：
+top.ecalculator.controller.avg_parallelism=§9当前使用并行数：
+top.ecalculator.controller.avg_time_usage=§b总性能使用：
+top.ecalculator.thread_core.status=§9核心状态：
+top.ecalculator.thread_core.status.offline=§c离线
+top.ecalculator.thread_core.status.online=§a在线
+top.ecalculator.thread_core.threads=§9线程状态：
+top.ecalculator.thread_core.crafting=§9正在合成：
+top.ecalculator.thread_core.avg_parallelism=§9平均并行数：
+top.ecalculator.thread_core.avg_time_usage=§b平均性能使用：
+
+tile.ecoaeextension.extendable_digital_storage_subsystem_l4.name=§9ECO - §bL4 §9可扩展存储子系统主机
+tile.ecoaeextension.extendable_digital_storage_subsystem_l6.name=§9ECO - §6L6 §9可扩展存储子系统主机
+tile.ecoaeextension.extendable_digital_storage_subsystem_l9.name=§9ECO - §5L9 §9可扩展存储子系统主机
+tile.ecoaeextension.estorage_energy_cell_l4.name=§9ECO - §bLT4 §9高密度能量元件
+tile.ecoaeextension.estorage_energy_cell_l6.name=§9ECO - §6LT6 §9高密度能量元件
+tile.ecoaeextension.estorage_energy_cell_l9.name=§9ECO - §5LT9 §9高密度能量元件
+tile.ecoaeextension.estorage_cell_drive.name=§9ECO - §bLD §9存储矩阵驱动器
+tile.ecoaeextension.estorage_me_channel.name=§9ECO - §bLR §9ME 矩阵通讯接口
+tile.ecoaeextension.estorage_vent.name=§9存储系统结构散热器
+tile.ecoaeextension.estorage_casing.name=§9存储系统结构外壳
+
+tile.ecoaeextension.extendable_fabricator_subsystem_l4.name=§9ECO - §bF4 §e可扩展合成子系统主机
+tile.ecoaeextension.extendable_fabricator_subsystem_l6.name=§9ECO - §6F6 §e可扩展合成子系统主机
+tile.ecoaeextension.extendable_fabricator_subsystem_l9.name=§9ECO - §5F9 §e可扩展合成子系统主机
+tile.ecoaeextension.efabricator_worker.name=§9ECO - §eFX §b工作核心
+tile.ecoaeextension.efabricator_parallel_proc_l4.name=§9ECO - §bFT4 §5并行核心
+tile.ecoaeextension.efabricator_parallel_proc_l6.name=§9ECO - §6FT6 §5并行核心
+tile.ecoaeextension.efabricator_parallel_proc_l9.name=§9ECO - §5FT9 §5并行核心
+tile.ecoaeextension.efabricator_pattern_bus.name=§9ECO - §eFD 智能样板总线
+tile.ecoaeextension.efabricator_me_channel.name=§9ECO - §eFR §9ME 矩阵通讯接口
+tile.ecoaeextension.efabricator_vent.name=§e合成系统结构散热器
+tile.ecoaeextension.efabricator_casing.name=§e合成系统结构外壳
+tile.ecoaeextension.efabricator_tail_l4.name=§e合成系统结构连结器 - §bF4
+tile.ecoaeextension.efabricator_tail_l6.name=§e合成系统结构连结器 - §6F6
+tile.ecoaeextension.efabricator_tail_l9.name=§e合成系统结构连结器 - §5F9
+
+tile.ecoaeextension.extendable_calculator_subsystem_l4.name=§9ECO - §bC4 §b可扩展计算子系统主机
+tile.ecoaeextension.extendable_calculator_subsystem_l6.name=§9ECO - §6C6 §b可扩展计算子系统主机
+tile.ecoaeextension.extendable_calculator_subsystem_l9.name=§9ECO - §5C9 §b可扩展计算子系统主机
+tile.ecoaeextension.ecalculator_cell_drive.name=§9ECO - §bCD §9晶阵驱动器
+tile.ecoaeextension.ecalculator_transmitter_bus.name=§9ECO - §bCI §b超导晶阵传输总线
+tile.ecoaeextension.ecalculator_parallel_proc_l4.name=§9ECO - §bCT4 §5并行核心
+tile.ecoaeextension.ecalculator_parallel_proc_l6.name=§9ECO - §6CT6 §5并行核心
+tile.ecoaeextension.ecalculator_parallel_proc_l9.name=§9ECO - §5CT9 §5并行核心
+tile.ecoaeextension.ecalculator_thread_core_l4.name=§9ECO - §bCM4A §b线程核心
+tile.ecoaeextension.ecalculator_thread_core_hyper_l4.name=§9ECO - §bCM4B §9超线程核心
+tile.ecoaeextension.ecalculator_thread_core_l6.name=§9ECO - §6CM6A §b线程核心
+tile.ecoaeextension.ecalculator_thread_core_hyper_l6.name=§9ECO - §6CM6B §9超线程核心
+tile.ecoaeextension.ecalculator_thread_core_l9.name=§9ECO - §5CM9A §b线程核心
+tile.ecoaeextension.ecalculator_thread_core_hyper_l9.name=§9ECO - §5CM9B §9超线程核心
+tile.ecoaeextension.ecalculator_me_channel.name=§9ECO - §bCR §9ME 矩阵通讯接口
+tile.ecoaeextension.ecalculator_casing.name=§b计算系统结构外壳
+tile.ecoaeextension.ecalculator_tail_l4.name=§b计算系统散热总控 - §bC4
+tile.ecoaeextension.ecalculator_tail_l6.name=§b计算系统散热总控 - §6C6
+tile.ecoaeextension.ecalculator_tail_l9.name=§b计算系统散热总控 - §5C9
+
+gui.estorage_controller.cell_info.tip.0=%s（%s）
+gui.estorage_controller.cell_info.tip.1=类型使用：%s / %s
+gui.estorage_controller.cell_info.tip.2=字节使用：%s / %s
+
+gui.estorage_controller.cell_info.item=物品存储矩阵
+gui.estorage_controller.cell_info.fluid=流体存储矩阵
+gui.estorage_controller.cell_info.empty=未知
+
+gui.estorage_controller.graph.fluid.percent=流体存储占用：%s%%
+gui.estorage_controller.graph.item.percent=物品存储占用：%s%%
+gui.estorage_controller.graph.total.percent=总存储占用：%s%%
+gui.estorage_controller.graph.fluid_type=流体类型：%s / %s
+gui.estorage_controller.graph.item_type=物品类型：%s / %s
+gui.estorage_controller.graph.energy_usage=总耗能：%sAE/t
+gui.estorage_controller.graph.energy_stored.percent=能量存储：%s%%
+gui.estorage_controller.graph.energy_stored=能量存储：%sAE / %sAE
+
+gui.efabricator_pattern_bus.title=§9ECO - §eFD 智能样板总线
+gui.efabricator_pattern_bus.inventory=物品栏
+
+gui.efabricator.total_crafted=统计 - 已完成配方数：%s
+gui.efabricator.total_crafted.update=统计 - 已完成配方数：%s，合成速度：§a+%s/Tick§f
+gui.efabricator.button.upload_pattern=上传样板至当前网络中可用的§9可扩展合成子系统§7中。
+gui.efabricator.queue.status=队列：%s / %s
+gui.efabricator.max_energy_usage=最大能耗：§b%s AE
+gui.efabricator.max_energy_usage.tip=显示值为所有工作核心满负载时工作一次的能耗。
+gui.efabricator.overclocked.enable.tip=单击启用§e超频 I§f 模式，在有限范围内提升性能，消耗更多§c能量§f。
+gui.efabricator.overclocked.disable.tip=单击禁用§e超频 I§f 模式。
+gui.efabricator.active_cooling=主动冷却：%s
+gui.efabricator.active_cooling.enable.tip.0=单击启用 §9ECO - FZ 主动冷却子系统§f，消耗流体输入仓内的§9冷却液，§f提升§a性能§f并降低§a能耗§f。
+gui.efabricator.active_cooling.enable.tip.1=支持的§9冷却液§f：
+gui.efabricator.active_cooling.enable.tip.1.coolant=  输入：%s §a%smB§f，输出：%s §a%smB§f，冷却单位：§b%s§f
+gui.efabricator.active_cooling.enable.tip.1.coolant.no_output=  输入：%s §a%smB§f，输出：§c无§f，冷却单位：§b%s§f
+gui.efabricator.active_cooling.enable.tip.2=启用主动冷却会使子系统进入§6超频 II§f 模式。
+gui.efabricator.active_cooling.enable.tip.3=如果§e超频 I§f 模式已启用，启用§9主动冷却§f会使子系统进入§c超频 III§f 模式。
+gui.efabricator.active_cooling.enable.tip.4=  §c超频 III§f 模式将§2极大幅度§f提升整机性能，并降低§a能量§f消耗，消耗更多§9冷却液§f。
+gui.efabricator.active_cooling.enable.tip.5=§f启用期间如果§9冷却液§f不足会§c停止合成§f工作。
+gui.efabricator.active_cooling.enable.tip.6=§f如果流体输出仓为满，则§c无法消耗§f冷却液。
+gui.efabricator.active_cooling.disable.tip=单击禁用 §9ECO - FZ 主动冷却子系统§f。
+gui.efabricator.active_cooling.on=§a启用
+gui.efabricator.active_cooling.off=§c禁用
+gui.efabricator.pattern_bus.count=样板总线：%s
+gui.efabricator.parallel_proc.count=并行核心：%s
+gui.efabricator.worker.count=工作核心：%s
+gui.efabricator.crafting_progress.0=总队列占用：%s%%
+gui.efabricator.crafting_progress.1=%s / %s
+gui.efabricator.crafting_time.0=预计耗时：%s
+gui.efabricator.total_parallelism=总并行数：%s
+gui.efabricator.total_parallelism.limit=限制为：%s
+gui.efabricator.total_parallelism.overflow=溢出：%s (%s%%)
+gui.efabricator.total_parallelism.overflow_speedup=加速：%s Tick (%s%%)
+gui.efabricator.total_parallelism.overflow_speedup.coolants.0=冷却液消耗：
+gui.efabricator.total_parallelism.overflow_speedup.coolants.1=%s mB/t
+gui.efabricator.switch.pattern_search=单击切换到§9样板管理器§f。
+gui.efabricator.switch.default=单击切换到§9合成监控器§f。
+gui.efabricator.pattern_search.title=样板管理器
+gui.efabricator.pattern_search.input=§7§o搜索材料...
+gui.efabricator.pattern_search.output=§7§o搜索产物...
+gui.efabricator.pattern_search.put_pattern=单击将鼠标持有的样板插入样板总线（如果可用）。

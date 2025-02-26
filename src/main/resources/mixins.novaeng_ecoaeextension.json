@@ -1,0 +1,14 @@
+{
+  "package": "github.kasuminova.ecoaeextension.mixin.mmce",
+  "refmap": "mixins.novaeng_ecoaeextension.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinIngredientItemStackRenderer"
+  ],
+  "mixins": [
+    "MixinMachineRegistry",
+    "MixinModDataHolder"
+  ]
+}

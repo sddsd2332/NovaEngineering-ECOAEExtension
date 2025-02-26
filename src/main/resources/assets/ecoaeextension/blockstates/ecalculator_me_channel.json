@@ -1,0 +1,16 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:ec_modular_synthetic_memory/me_port_ec_system"
+    },
+    "variants": {
+        "normal": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/me_port_ec_system"
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

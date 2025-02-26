@@ -1,0 +1,145 @@
+{
+	"credit": "Made with WI_8614_ice",
+	"texture_size": [64, 64],
+	"textures": {
+		"84": "ecoaeextension:blocks/ec_modular_synthetic_memory/ec_synthetic_storage_control_host_off",
+		"particle": "ecoaeextension:blocks/ec_modular_synthetic_memory/parallel_unit_hosing"
+	},
+	"elements": [
+		{
+			"from": [-5, 4, -0.75],
+			"to": [-4, 12, -0.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-19, -18, -0.75]},
+			"faces": {
+				"north": {"uv": [5.3125, 15.375, 5.375, 15.875], "texture": "#84"},
+				"east": {"uv": [5.375, 15.3125, 5.875, 15.375], "rotation": 90, "texture": "#84"},
+				"south": {"uv": [5.875, 15.375, 5.9375, 15.875], "texture": "#84"},
+				"west": {"uv": [5.875, 15.25, 5.9375, 15.3125], "texture": "#84"},
+				"up": {"uv": [5.375, 15.4375, 5.3125, 15.375], "texture": "#84"},
+				"down": {"uv": [5.375, 15.875, 5.3125, 15.8125], "texture": "#84"}
+			}
+		},
+		{
+			"from": [-13, 3, -0.75],
+			"to": [-5, 4, -0.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-19, -18, -0.75]},
+			"faces": {
+				"north": {"uv": [5.375, 15.875, 5.875, 15.9375], "texture": "#84"},
+				"east": {"uv": [5.375, 15.875, 5.4375, 15.9375], "rotation": 90, "texture": "#84"},
+				"south": {"uv": [5.375, 15.875, 5.875, 15.9375], "texture": "#84"},
+				"west": {"uv": [5.8125, 15.875, 5.875, 15.9375], "texture": "#84"},
+				"up": {"uv": [5.9375, 15.3125, 5.875, 15.25], "texture": "#84"},
+				"down": {"uv": [5.875, 15.9375, 5.375, 15.875], "texture": "#84"}
+			}
+		},
+		{
+			"from": [-14, 4, -0.75],
+			"to": [-13, 12, -0.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-19, -18, -0.75]},
+			"faces": {
+				"north": {"uv": [5.875, 15.375, 5.9375, 15.875], "texture": "#84"},
+				"east": {"uv": [5.875, 15.25, 5.9375, 15.3125], "rotation": 90, "texture": "#84"},
+				"south": {"uv": [5.3125, 15.375, 5.375, 15.875], "texture": "#84"},
+				"west": {"uv": [5.875, 15.375, 5.9375, 15.875], "texture": "#84"},
+				"up": {"uv": [5.9375, 15.4375, 5.875, 15.375], "texture": "#84"},
+				"down": {"uv": [5.9375, 15.875, 5.875, 15.8125], "texture": "#84"}
+			}
+		},
+		{
+			"from": [-13, 4, -0.75],
+			"to": [-5, 12, -0.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-19, -18, -0.75]},
+			"faces": {
+				"north": {"uv": [5.375, 15.375, 5.875, 15.875], "texture": "#84"},
+				"east": {"uv": [5.875, 15.25, 5.9375, 15.3125], "rotation": 90, "texture": "#84"},
+				"south": {"uv": [5.375, 15.375, 5.875, 15.875], "texture": "#84"},
+				"west": {"uv": [5.875, 15.25, 5.9375, 15.3125], "texture": "#84"},
+				"up": {"uv": [5.9375, 15.3125, 5.875, 15.25], "texture": "#84"},
+				"down": {"uv": [5.9375, 15.3125, 5.875, 15.25], "texture": "#84"}
+			}
+		},
+		{
+			"from": [-13, 12, -0.75],
+			"to": [-5, 13, -0.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-19, -18, -0.75]},
+			"faces": {
+				"north": {"uv": [5.375, 15.3125, 5.875, 15.375], "texture": "#84"},
+				"east": {"uv": [5.375, 15.3125, 5.4375, 15.375], "rotation": 90, "texture": "#84"},
+				"south": {"uv": [5.375, 15.3125, 5.875, 15.375], "texture": "#84"},
+				"west": {"uv": [5.8125, 15.3125, 5.875, 15.375], "texture": "#84"},
+				"up": {"uv": [5.875, 15.375, 5.375, 15.3125], "texture": "#84"},
+				"down": {"uv": [5.9375, 15.3125, 5.875, 15.25], "texture": "#84"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "EC_synthetic_storage_control_host_cooling_controller",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "main",
+					"origin": [29.99959, 8, 2],
+					"color": 0,
+					"children": [
+						{
+							"name": "bloom",
+							"origin": [-16, -16, -10.75],
+							"color": 0,
+							"children": []
+						},
+						{
+							"name": "bloom",
+							"origin": [-16, -16, 0],
+							"color": 0,
+							"children": []
+						},
+						{
+							"name": "glass",
+							"origin": [-19, -18, -4.75],
+							"color": 0,
+							"children": []
+						},
+						{
+							"name": "a",
+							"origin": [30, -9, 2],
+							"color": 0,
+							"children": []
+						},
+						{
+							"name": "b",
+							"origin": [30, -25, 2],
+							"color": 0,
+							"children": []
+						},
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"name": "Insert_the_plug",
+					"origin": [-16, -16, 0],
+					"color": 0,
+					"children": []
+				},
+				{
+					"name": "pm",
+					"origin": [0, 0, -0.25],
+					"color": 0,
+					"children": [
+						{
+							"name": "off",
+							"origin": [0, 0, -0.25],
+							"color": 0,
+							"children": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

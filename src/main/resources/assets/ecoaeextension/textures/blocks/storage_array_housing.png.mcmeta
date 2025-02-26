@@ -1,0 +1,17 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "SOLID",
+        "textures": [
+            "contenttweaker:blocks/storage_array_housing-ctm"
+        ],
+        "extra": {
+            "connect_to": [
+                {
+                    "block": "contenttweaker:storage_array_housing"
+                }
+            ]
+        }
+    }
+}

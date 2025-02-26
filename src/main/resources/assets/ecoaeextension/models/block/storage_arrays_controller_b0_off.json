@@ -1,0 +1,95 @@
+{
+    "credit": "Made with Blockbench",
+    "textures": {
+        "1": "ecoaeextension:blocks/storage_arrays_controller_south",
+        "2": "ecoaeextension:blocks/storage_arrays_controller_up",
+        "3": "ecoaeextension:blocks/storage_arrays_controller_off_west",
+        "5": "ecoaeextension:blocks/storage_arrays_controller_down",
+        "7": "ecoaeextension:blocks/storage_arrays_controller_b_north_off",
+        "8": "ecoaeextension:blocks/storage_arrays_controller_east_b",
+        "particle": "ecoaeextension:blocks/storage_arrays_controller_off_west"
+    },
+    "elements": [
+        {
+            "from": [
+                0,
+                -16,
+                0
+            ],
+            "to": [
+                32,
+                32,
+                32
+            ],
+            "faces": {
+                "north": {
+                    "uv": [
+                        0,
+                        0,
+                        10.66667,
+                        16
+                    ],
+                    "texture": "#7"
+                },
+                "east": {
+                    "uv": [
+                        0,
+                        0,
+                        10.66667,
+                        16
+                    ],
+                    "texture": "#3"
+                },
+                "south": {
+                    "uv": [
+                        0,
+                        0,
+                        10.66667,
+                        16
+                    ],
+                    "texture": "#1"
+                },
+                "west": {
+                    "uv": [
+                        10.66667,
+                        0,
+                        0,
+                        16
+                    ],
+                    "texture": "#8"
+                },
+                "up": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#2"
+                },
+                "down": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#5"
+                }
+            }
+        }
+    ],
+    "groups": [
+        {
+            "name": "bone",
+            "origin": [
+                0,
+                0,
+                0
+            ],
+            "color": 0,
+            "children": []
+        },
+        0
+    ]
+}

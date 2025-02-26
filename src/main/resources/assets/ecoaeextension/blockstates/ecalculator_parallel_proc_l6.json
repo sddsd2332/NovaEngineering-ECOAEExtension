@@ -1,0 +1,43 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/on/l6_parallel_module"
+    },
+    "variants": {
+        "facing=north,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/off/l6_parallel_module"
+        },
+        "facing=south,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/off/l6_parallel_module",
+            "y": 180
+        },
+        "facing=west,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/off/l6_parallel_module",
+            "y": 270
+        },
+        "facing=east,status=off": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/off/l6_parallel_module",
+            "y": 90
+        },
+        "facing=north,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/on/l6_parallel_module"
+        },
+        "facing=south,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/on/l6_parallel_module",
+            "y": 180
+        },
+        "facing=west,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/on/l6_parallel_module",
+            "y": 270
+        },
+        "facing=east,status=on": {
+            "model": "ecoaeextension:ec_modular_synthetic_memory/parallel_module/on/l6_parallel_module",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

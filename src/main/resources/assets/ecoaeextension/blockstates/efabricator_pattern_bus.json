@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:module_molecular_assembly_matrix/module_molecular_template_bus"
+    },
+    "variants": {
+        "facing=north": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/module_molecular_template_bus"
+        },
+        "facing=south": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/module_molecular_template_bus",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/module_molecular_template_bus",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "ecoaeextension:module_molecular_assembly_matrix/module_molecular_template_bus",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

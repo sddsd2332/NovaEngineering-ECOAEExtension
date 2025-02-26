@@ -1,0 +1,78 @@
+{
+    "credit": "Made with Blockbench",
+    "textures": {
+        "1": "ecoaeextension:blocks/led_dynamic",
+        "particle": "ecoaeextension:blocks/led_dynamic"
+    },
+    "elements": [
+        {
+            "name": "bloom",
+            "from": [
+                3,
+                11,
+                0.475
+            ],
+            "to": [
+                4,
+                12,
+                1.475
+            ],
+            "faces": {
+                "north": {
+                    "uv": [
+                        0,
+                        1,
+                        1,
+                        2
+                    ],
+                    "texture": "#1"
+                },
+                "east": {
+                    "uv": [
+                        0,
+                        1,
+                        1,
+                        2
+                    ],
+                    "texture": "#1"
+                },
+                "south": {
+                    "uv": [
+                        1,
+                        1,
+                        0,
+                        2
+                    ],
+                    "texture": "#1"
+                },
+                "west": {
+                    "uv": [
+                        0,
+                        1,
+                        1,
+                        2
+                    ],
+                    "texture": "#1"
+                },
+                "up": {
+                    "uv": [
+                        1,
+                        1,
+                        0,
+                        2
+                    ],
+                    "texture": "#1"
+                },
+                "down": {
+                    "uv": [
+                        1,
+                        1,
+                        0,
+                        2
+                    ],
+                    "texture": "#1"
+                }
+            }
+        }
+    ]
+}

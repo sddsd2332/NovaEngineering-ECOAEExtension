@@ -1,0 +1,43 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "ecoaeextension:storage_arrays_controller_c_off"
+    },
+    "variants": {
+        "facing=north,formed=false": {
+            "model": "ecoaeextension:storage_arrays_controller_c_off"
+        },
+        "facing=south,formed=false": {
+            "model": "ecoaeextension:storage_arrays_controller_c_off",
+            "y": 180
+        },
+        "facing=west,formed=false": {
+            "model": "ecoaeextension:storage_arrays_controller_c_off",
+            "y": 270
+        },
+        "facing=east,formed=false": {
+            "model": "ecoaeextension:storage_arrays_controller_c_off",
+            "y": 90
+        },
+        "facing=north,formed=true": {
+            "model": "ecoaeextension:storage_arrays_controller_c0"
+        },
+        "facing=south,formed=true": {
+            "model": "ecoaeextension:storage_arrays_controller_c0",
+            "y": 180
+        },
+        "facing=west,formed=true": {
+            "model": "ecoaeextension:storage_arrays_controller_c0",
+            "y": 270
+        },
+        "facing=east,formed=true": {
+            "model": "ecoaeextension:storage_arrays_controller_c0",
+            "y": 90
+        },
+        "inventory": [
+            {
+                "transform": "forge:default-block"
+            }
+        ]
+    }
+}

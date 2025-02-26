@@ -1,0 +1,32 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "SOLID",
+        "textures": [
+            "ecoaeextension:blocks/l6_modules_assembled_parallel_molecules_e-ctm"
+        ],
+        "extra": {
+            "connect_to": [
+                {
+                    "block": "ecoaeextension:carbon_fiber_chassis"
+                },
+                {
+                    "block": "ecoaeextension:l4_modules_assembled_parallel_molecules"
+                },
+                {
+                    "block": "ecoaeextension:l6_modules_assembled_parallel_molecules"
+                },
+                {
+                    "block": "ecoaeextension:l9_modules_assembled_parallel_molecules"
+                },
+                {
+                    "block": "ecoaeextension:module_molecular_assembly_drivers"
+                },
+                {
+                    "block": "ecoaeextension:module_molecular_template_bus"
+                }
+            ]
+        }
+    }
+}

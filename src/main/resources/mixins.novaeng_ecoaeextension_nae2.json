@@ -1,0 +1,10 @@
+{
+    "package": "github.kasuminova.ecoaeextension.mixin.nae2",
+    "refmap": "mixins.novaeng_ecoaeextension.refmap.json",
+    "target": "@env(DEFAULT)",
+    "minVersion": "0.8",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+        "MixinJEICellCategory"
+    ]
+}

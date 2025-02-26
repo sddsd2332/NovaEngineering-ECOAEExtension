@@ -1,0 +1,37 @@
+{
+	"credit": "Made with WI_8614_ice",
+	"textures": {
+		"3": "ecoaeextension:blocks/led/module_molecular_assembly_drivers_led/heat_dissipation_holes",
+		"particle": "ecoaeextension:blocks/bloom/module_molecular_assembly_drivers_led/heat_dissipation_holes"
+	},
+	"elements": [
+		{
+			"name": "heat_on",
+			"from": [11, 3, 0],
+			"to": [13, 13, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 8, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 9, 10, 11], "rotation": 270, "texture": "#3"},
+				"east": {"uv": [10, 9, 0, 10], "rotation": 90, "texture": "#3"},
+				"south": {"uv": [10, 9, 0, 11], "rotation": 90, "texture": "#3"},
+				"west": {"uv": [10, 10, 0, 11], "rotation": 90, "texture": "#3"},
+				"up": {"uv": [9, 9, 10, 11], "rotation": 90, "texture": "#3"},
+				"down": {"uv": [0, 9, 1, 11], "rotation": 90, "texture": "#3"}
+			}
+		},
+		{
+			"name": "heat_on",
+			"from": [11, 3, 0],
+			"to": [13, 13, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 8, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 9, 10, 11], "rotation": 270, "texture": "#particle"},
+				"east": {"uv": [10, 9, 0, 10], "rotation": 90, "texture": "#particle"},
+				"south": {"uv": [10, 9, 0, 11], "rotation": 90, "texture": "#particle"},
+				"west": {"uv": [10, 10, 0, 11], "rotation": 90, "texture": "#particle"},
+				"up": {"uv": [9, 9, 10, 11], "rotation": 90, "texture": "#particle"},
+				"down": {"uv": [0, 9, 1, 11], "rotation": 90, "texture": "#particle"}
+			}
+		}
+	]
+}
