@@ -1,6 +1,6 @@
 {
     "registryname": "extendable_calculator_subsystem_l9",
-    "localizedname": "§9ECO - §5C9 §9可扩展计算子系统",
+    "localizedname": "extendable_calculator_subsystem_l9",
     "requires-blueprint": false,
     "has-factory": false,
     "dynamic-patterns": [

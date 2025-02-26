@@ -15,8 +15,8 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = ECOAEExtension.MOD_ID, name = ECOAEExtension.MOD_NAME, version = ECOAEExtension.VERSION,
         dependencies = "required-after:forge@[14.23.5.2847,);" +
                 "required-after:modularmachinery@[2.1.0,);" +
+                "required-after:appliedenergistics2@[v0.56.4,);" +
                 "required:theoneprobe@[1.12-1.4.28,);" +
-                "required:appliedenergistics2@[v0.56.4,);" +
                 "required:ae2fc@[2.6.3-r,);" +
                 "required:configanytime@[2.0,);" +
                 "required:mixinbooter@[8.0,);" +

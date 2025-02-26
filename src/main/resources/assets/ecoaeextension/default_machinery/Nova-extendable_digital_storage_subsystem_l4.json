@@ -1,6 +1,6 @@
 {
     "registryname": "extendable_digital_storage_subsystem_l4",
-    "localizedname": "§9ECO - §bL4 §9可扩展存储子系统",
+    "localizedname": "extendable_digital_storage_subsystem_l4",
     "requires-blueprint": false,
     "has-factory": false,
     "dynamic-patterns": [

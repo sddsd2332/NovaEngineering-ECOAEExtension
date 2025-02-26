@@ -1,6 +1,6 @@
 {
     "registryname": "extendable_fabricator_subsystem_l4",
-    "localizedname": "§9ECO - §bF4 §e可扩展合成子系统",
+    "localizedname": "extendable_fabricator_subsystem_l4",
     "requires-blueprint": false,
     "has-factory": false,
     "dynamic-patterns": [

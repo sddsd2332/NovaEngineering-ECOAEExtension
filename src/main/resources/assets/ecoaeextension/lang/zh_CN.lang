@@ -1,3 +1,5 @@
+itemGroup.ecoaeextension=ECO AE Extension
+
 item.ecoaeextension.estorage_cell_item_16m.name=§9ECO - §bLE4 §9存储矩阵§a（物品）
 item.ecoaeextension.estorage_cell_item_64m.name=§9ECO - §6LE6 §9存储矩阵§a（物品）
 item.ecoaeextension.estorage_cell_item_256m.name=§9ECO - §5LE9 §9存储矩阵§a（物品）
@@ -233,3 +235,13 @@ gui.efabricator.total_parallelism.overflow=溢出：%s (%s%%)
 gui.efabricator.total_parallelism.overflow_speedup=加速：%s Tick (%s%%)
 gui.efabricator.total_parallelism.overflow_speedup.coolants.0=冷却液消耗：
 gui.efabricator.total_parallelism.overflow_speedup.coolants.1=%s mB/t
+
+modularmachinery.extendable_calculator_subsystem_l4=§9ECO - §bC4 §9可扩展计算子系统
+modularmachinery.extendable_calculator_subsystem_l6=§9ECO - §6C6 §9可扩展计算子系统
+modularmachinery.extendable_calculator_subsystem_l9=§9ECO - §5C9 §9可扩展计算子系统
+modularmachinery.extendable_digital_storage_subsystem_l4=§9ECO - §bL4 §9可扩展存储子系统
+modularmachinery.extendable_digital_storage_subsystem_l6=§9ECO - §6L6 §9可扩展存储子系统
+modularmachinery.extendable_digital_storage_subsystem_l9=§9ECO - §5L9 §9可扩展存储子系统
+modularmachinery.extendable_fabricator_subsystem_l4=§9ECO - §bF4 §e可扩展合成子系统
+modularmachinery.extendable_fabricator_subsystem_l6=§9ECO - §bF6 §e可扩展合成子系统
+modularmachinery.extendable_fabricator_subsystem_l9=§9ECO - §bF9 §e可扩展合成子系统

@@ -1,6 +1,6 @@
 {
     "registryname": "extendable_fabricator_subsystem_l6",
-    "localizedname": "§9ECO - §bF6 §e可扩展合成子系统",
+    "localizedname": "extendable_fabricator_subsystem_l6",
     "requires-blueprint": false,
     "has-factory": false,
     "dynamic-patterns": [
