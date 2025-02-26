@@ -52,7 +52,9 @@ public class CommonProxy implements IGuiHandler {
     }
 
     public void init() {
-        IntegrationTOP.registerProvider();
+        if (Mods.TOP.isPresent()){
+            IntegrationTOP.registerProvider();
+        }
         if (Mods.AE2.isPresent()) {
             List<ICellHandler> handlers = ((AccessorCellRegistry) (AEApi.instance().registries().cell())).getHandlers();
             handlers.add(0, EStorageCellHandler.INSTANCE);

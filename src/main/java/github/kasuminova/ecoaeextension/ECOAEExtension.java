@@ -18,7 +18,6 @@ import org.apache.logging.log4j.Logger;
                 "required-after:appliedenergistics2@[v0.56.4,);" +
                 "required:theoneprobe@[1.12-1.4.28,);" +
                 "required:ae2fc@[2.6.3-r,);" +
-                "required:configanytime@[2.0,);" +
                 "required:mixinbooter@[8.0,);" +
                 "required:lumenized@[1.0.2,);",
         acceptedMinecraftVersions = "[1.12, 1.13)"
