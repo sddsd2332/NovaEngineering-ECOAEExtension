@@ -2,6 +2,7 @@ package github.kasuminova.ecoaeextension.common.block.ecotech.estorage;
 
 import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.common.CommonProxy;
+import github.kasuminova.ecoaeextension.common.core.CreativeTabNovaEng;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageController;
 import hellfirepvp.modularmachinery.ModularMachinery;
 import hellfirepvp.modularmachinery.common.block.BlockController;
@@ -54,7 +55,7 @@ public class BlockEStorageController extends BlockController {
         this.setResistance(2000.0F);
         this.setHarvestLevel("pickaxe", 2);
         this.fullBlock = false;
-
+        this.setCreativeTab(CreativeTabNovaEng.INSTANCE);
         registryName = new ResourceLocation(ECOAEExtension.MOD_ID, "extendable_digital_storage_subsystem_" + level);
         machineRegistryName = new ResourceLocation(ModularMachinery.MODID, registryName.getPath());
         setRegistryName(registryName);

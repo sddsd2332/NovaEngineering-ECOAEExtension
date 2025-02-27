@@ -1,8 +1,8 @@
 package github.kasuminova.ecoaeextension.common.block.ecotech.estorage;
 
 import github.kasuminova.ecoaeextension.ECOAEExtension;
+import github.kasuminova.ecoaeextension.common.core.CreativeTabNovaEng;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageMEChannel;
-import hellfirepvp.modularmachinery.common.CommonProxy;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -23,7 +23,7 @@ public class BlockEStorageMEChannel extends BlockEStoragePart {
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
         this.setHarvestLevel("pickaxe", 1);
-        this.setCreativeTab(CommonProxy.creativeTabModularMachinery);
+        this.setCreativeTab(CreativeTabNovaEng.INSTANCE);
         this.setDefaultState(this.blockState.getBaseState());
         this.setRegistryName(new ResourceLocation(ECOAEExtension.MOD_ID, "estorage_me_channel"));
         this.setTranslationKey(ECOAEExtension.MOD_ID + '.' + "estorage_me_channel");

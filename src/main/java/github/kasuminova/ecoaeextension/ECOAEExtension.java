@@ -16,9 +16,10 @@ import org.apache.logging.log4j.Logger;
         dependencies = "required-after:forge@[14.23.5.2847,);" +
                 "required-after:modularmachinery@[2.1.0,);" +
                 "required-after:appliedenergistics2@[v0.56.4,);" +
+                "required-after:mixinbooter@[8.0,);" +
+                "required-after:jei@[4.25.0,);" +
                 "required:theoneprobe@[1.12-1.4.28,);" +
                 "required:ae2fc@[2.6.3-r,);" +
-                "required:mixinbooter@[8.0,);" +
                 "required:lumenized@[1.0.2,);",
         acceptedMinecraftVersions = "[1.12, 1.13)"
 )

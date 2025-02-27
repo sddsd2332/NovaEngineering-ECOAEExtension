@@ -2,6 +2,7 @@ package github.kasuminova.ecoaeextension.common.block.ecotech.ecalculator;
 
 import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.common.CommonProxy;
+import github.kasuminova.ecoaeextension.common.core.CreativeTabNovaEng;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.ecalculator.ECalculatorController;
 import hellfirepvp.modularmachinery.ModularMachinery;
 import hellfirepvp.modularmachinery.common.block.BlockController;
@@ -49,6 +50,7 @@ public class BlockECalculatorController extends BlockController {
     protected final ResourceLocation machineRegistryName;
 
     public BlockECalculatorController(final String level) {
+        this.setCreativeTab(CreativeTabNovaEng.INSTANCE);
         this.setHardness(20.0F);
         this.setResistance(2000.0F);
         this.setHarvestLevel("pickaxe", 2);
