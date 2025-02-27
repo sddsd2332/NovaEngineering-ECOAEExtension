@@ -16,10 +16,24 @@
       ],
       "credits": "",
       "logoFile": "assets/ecoaeextension/logo.png",
-      "screenshots": [],
-      "dependencies": [],
-      "requiredMods": [],
-      "useDependencyInformation": true
+      "useDependencyInformation": true,
+      "dependencies": [
+        "forge",
+        "modularmachinery",
+        "appliedenergistics2",
+        "mixinbooter",
+        "jei",
+        "theoneprobe@[1.12-1.4.28,)",
+        "ae2fc@[2.6.3-r,)",
+        "lumenized"
+      ],
+      "requiredMods": [
+        "forge@[14.23.5.2768,)",
+        "modularmachinery@[2.1.0,)",
+        "appliedenergistics2@[v0.56.4,)",
+        "jei@[4.25.0,)",
+        "mixinbooter@[8.0,)"
+      ]
     }
   ]
 }
