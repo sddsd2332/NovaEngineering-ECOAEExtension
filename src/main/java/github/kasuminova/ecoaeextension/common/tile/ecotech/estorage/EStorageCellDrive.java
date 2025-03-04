@@ -25,8 +25,10 @@ import github.kasuminova.ecoaeextension.common.estorage.ECellDriveWatcher;
 import github.kasuminova.ecoaeextension.common.estorage.EStorageCellHandler;
 import github.kasuminova.ecoaeextension.common.item.estorage.EStorageCell;
 import github.kasuminova.ecoaeextension.common.item.estorage.EStorageCellFluid;
+import github.kasuminova.ecoaeextension.common.item.estorage.EStorageCellGas;
 import github.kasuminova.ecoaeextension.common.item.estorage.EStorageCellItem;
 import github.kasuminova.ecoaeextension.common.network.PktCellDriveStatusUpdate;
+import hellfirepvp.modularmachinery.common.base.Mods;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -69,6 +71,7 @@ public class EStorageCellDrive extends EStoragePart implements ISaveProvider, IA
             case EMPTY -> 0;
             case ITEM -> 315;
             case FLUID -> 25;
+            case GAS -> Mods.MEKENG.isPresent() ? 25 : 0;
         };
     }
 
@@ -89,6 +92,12 @@ public class EStorageCellDrive extends EStoragePart implements ISaveProvider, IA
                 case B -> EStorageCellFluid.LEVEL_B.getBytes(ItemStack.EMPTY);
                 case C -> EStorageCellFluid.LEVEL_C.getBytes(ItemStack.EMPTY);
             };
+            case GAS -> Mods.MEKENG.isPresent() ? switch (level) {
+                case EMPTY -> 0;
+                case A -> EStorageCellGas.LEVEL_A.getBytes(ItemStack.EMPTY);
+                case B -> EStorageCellGas.LEVEL_B.getBytes(ItemStack.EMPTY);
+                case C -> EStorageCellGas.LEVEL_C.getBytes(ItemStack.EMPTY);
+            } : 0;
         };
     }
 
@@ -202,6 +211,8 @@ public class EStorageCellDrive extends EStoragePart implements ISaveProvider, IA
             type = DriveStorageType.ITEM;
         } else if (cell instanceof EStorageCellFluid) {
             type = DriveStorageType.FLUID;
+        } else if (Mods.MEKENG.isPresent() && cell instanceof EStorageCellGas) {
+            type = DriveStorageType.GAS;
         } else {
             return null;
         }

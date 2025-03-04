@@ -8,6 +8,7 @@ import github.kasuminova.ecoaeextension.common.crafttweaker.util.NovaEngUtils;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageCellDrive;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageController;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageEnergyCell;
+import hellfirepvp.modularmachinery.common.base.Mods;
 import mcjty.theoneprobe.api.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -70,12 +71,13 @@ public class EStorageInfoProvider implements IProbeInfoProvider {
         }
         DriveStorageType type = data.type();
         String typeName = "gui.estorage_controller.cell_info." + switch (type) {
-            case EMPTY -> "unknown";
+            case EMPTY -> "empty";
             case ITEM -> "item";
             case FLUID -> "fluid";
+            case GAS -> Mods.MEKENG.isPresent() ? "gas" :  "empty";
         };
         String levelName = switch (level) {
-            case EMPTY -> "unknown";
+            case EMPTY -> "empty";
             case A -> "L4";
             case B -> "L6";
             case C -> "L9";

@@ -8,7 +8,8 @@ import javax.annotation.Nonnull;
 public enum DriveStorageType implements IStringSerializable {
     EMPTY("empty"),
     ITEM("item"),
-    FLUID("fluid");
+    FLUID("fluid"),
+    GAS("gas");
 
     public static final PropertyEnum<DriveStorageType> STORAGE_TYPE = PropertyEnum.create("storage_type", DriveStorageType.class);
     private final String name;

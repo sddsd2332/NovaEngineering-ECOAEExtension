@@ -1,10 +1,5 @@
 package github.kasuminova.ecoaeextension.client.gui.widget.estorage;
 
-import github.kasuminova.mmce.client.gui.util.AnimationValue;
-import github.kasuminova.mmce.client.gui.widget.base.WidgetController;
-import github.kasuminova.mmce.client.gui.widget.base.WidgetGui;
-import github.kasuminova.mmce.client.gui.widget.container.Row;
-import github.kasuminova.mmce.client.gui.widget.event.GuiEvent;
 import github.kasuminova.ecoaeextension.client.gui.GuiEStorageController;
 import github.kasuminova.ecoaeextension.client.gui.widget.estorage.event.ESGUIDataUpdateEvent;
 import github.kasuminova.ecoaeextension.common.block.ecotech.estorage.prop.DriveStorageType;
@@ -12,6 +7,12 @@ import github.kasuminova.ecoaeextension.common.container.data.EStorageCellData;
 import github.kasuminova.ecoaeextension.common.container.data.EStorageEnergyData;
 import github.kasuminova.ecoaeextension.common.crafttweaker.util.NovaEngUtils;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageCellDrive;
+import github.kasuminova.mmce.client.gui.util.AnimationValue;
+import github.kasuminova.mmce.client.gui.widget.base.WidgetController;
+import github.kasuminova.mmce.client.gui.widget.base.WidgetGui;
+import github.kasuminova.mmce.client.gui.widget.container.Row;
+import github.kasuminova.mmce.client.gui.widget.event.GuiEvent;
+import hellfirepvp.modularmachinery.common.base.Mods;
 import net.minecraft.client.resources.I18n;
 import org.lwjgl.input.Keyboard;
 
@@ -27,9 +28,15 @@ public class EStorageGraph extends Row {
         WidgetController widgetController = controllerGUI.getWidgetController();
         widgetController.addWidgetContainer(new FluidGraph(this));
         widgetController.addWidgetContainer(new ItemGraph(this));
+        if (getMekEngLoad()) {
+            widgetController.addWidgetContainer(new GasGraph(this));
+        }
         widgetController.addWidgetContainer(new TotalGraph(this));
         widgetController.addWidgetContainer(new FluidTypeGraph(this));
         widgetController.addWidgetContainer(new ItemTypeGraph(this));
+        if (getMekEngLoad()) {
+            widgetController.addWidgetContainer(new GasTypeGraph(this));
+        }
         widgetController.addWidgetContainer(new EnergyCapacityGraph(this));
         widgetController.addWidgetContainer(new EnergyUsageGraph(this));
     }
@@ -48,9 +55,9 @@ public class EStorageGraph extends Row {
     }
 
     public class FluidGraph extends Graph {
-        
+
         public FluidGraph(final EStorageGraph graphParent) {
-            super(graphParent, 
+            super(graphParent,
                     10, 32,
                     60, 16,
                     2,
@@ -131,11 +138,53 @@ public class EStorageGraph extends Row {
         }
     }
 
+    public class GasGraph extends Graph {
+
+        public GasGraph(final EStorageGraph graphParent) {
+            super(graphParent,
+                    10, 70,
+                    60, 16,
+                    2,
+                    1, 232,
+                    65, 6,
+                    true, false);
+        }
+
+        @Override
+        public void update(final WidgetGui gui) {
+            super.update(gui);
+            if (!value.isAnimFinished()) {
+                label.setContents(Collections.singletonList(
+                        I18n.format("gui.estorage_controller.graph.gas.percent",
+                                NovaEngUtils.formatDouble(value.get() * 100, 1)))
+                );
+            }
+        }
+
+        @Override
+        public boolean onGuiEvent(final GuiEvent event) {
+            if (event instanceof ESGUIDataUpdateEvent) {
+                double totalUsedBytes = 0;
+                double totalMaxBytes = 0;
+                for (final EStorageCellData data : controllerGUI.getCellDataList()) {
+                    long maxBytes = EStorageCellDrive.getMaxBytes(data);
+                    totalMaxBytes += maxBytes;
+                    if (data.type() == DriveStorageType.GAS) {
+                        long usedBytes = data.usedBytes();
+                        totalUsedBytes += usedBytes;
+                    }
+                }
+                value.set(totalMaxBytes <= 0 ? 0 : totalUsedBytes / totalMaxBytes);
+            }
+            return super.onGuiEvent(event);
+        }
+    }
+
     public class TotalGraph extends Graph {
 
         public TotalGraph(final EStorageGraph graphParent) {
             super(graphParent,
-                    8, 70,
+                    8, getMekEngLoad() ? 70 + 19 : 70,
                     64, 16,
                     2,
                     2, 239,
@@ -173,52 +222,6 @@ public class EStorageGraph extends Row {
         }
     }
 
-    public class FluidTypeGraph extends Graph {
-
-        protected final AnimationValue totalUsedFluidTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
-        protected final AnimationValue totalMaxFluidTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
-        
-        public FluidTypeGraph(final EStorageGraph graphParent) {
-            super(graphParent,
-                    85, 46,
-                    60, 16,
-                    1,
-                    1, 197,
-                    60, 6,
-                    false, false);
-        }
-
-        @Override
-        public void update(final WidgetGui gui) {
-            super.update(gui);
-            if (!value.isAnimFinished()) {
-                label.setContents(Collections.singletonList(
-                        I18n.format("gui.estorage_controller.graph.fluid_type",
-                                NovaEngUtils.formatNumber((long) totalUsedFluidTypes.get(), 1),
-                                NovaEngUtils.formatNumber((long) totalMaxFluidTypes.get(), 1)
-                        ))
-                );
-            }
-        }
-
-        @Override
-        public boolean onGuiEvent(final GuiEvent event) {
-            if (event instanceof ESGUIDataUpdateEvent) {
-                int totalUsedFluidTypes = 0;
-                int totalMaxFluidTypes = 0;
-                for (final EStorageCellData data : controllerGUI.getCellDataList()) {
-                    if (data.type() == DriveStorageType.FLUID) {
-                        totalUsedFluidTypes += data.usedTypes();
-                        totalMaxFluidTypes += 25;
-                    }
-                }
-                this.totalUsedFluidTypes.set(totalUsedFluidTypes);
-                this.totalMaxFluidTypes.set(totalMaxFluidTypes);
-                value.set(totalUsedFluidTypes <= 0 ? 0 : (double) totalUsedFluidTypes / totalMaxFluidTypes);
-            }
-            return super.onGuiEvent(event);
-        }
-    }
 
     public class ItemTypeGraph extends Graph {
 
@@ -267,6 +270,100 @@ public class EStorageGraph extends Row {
         }
     }
 
+    public class FluidTypeGraph extends Graph {
+
+        protected final AnimationValue totalUsedFluidTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
+        protected final AnimationValue totalMaxFluidTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
+
+        public FluidTypeGraph(final EStorageGraph graphParent) {
+            super(graphParent,
+                    85, 46,
+                    60, 16,
+                    1,
+                    1, 197,
+                    60, 6,
+                    false, false);
+        }
+
+        @Override
+        public void update(final WidgetGui gui) {
+            super.update(gui);
+            if (!value.isAnimFinished()) {
+                label.setContents(Collections.singletonList(
+                        I18n.format("gui.estorage_controller.graph.fluid_type",
+                                NovaEngUtils.formatNumber((long) totalUsedFluidTypes.get(), 1),
+                                NovaEngUtils.formatNumber((long) totalMaxFluidTypes.get(), 1)
+                        ))
+                );
+            }
+        }
+
+        @Override
+        public boolean onGuiEvent(final GuiEvent event) {
+            if (event instanceof ESGUIDataUpdateEvent) {
+                int totalUsedFluidTypes = 0;
+                int totalMaxFluidTypes = 0;
+                for (final EStorageCellData data : controllerGUI.getCellDataList()) {
+                    if (data.type() == DriveStorageType.FLUID) {
+                        totalUsedFluidTypes += data.usedTypes();
+                        totalMaxFluidTypes += 25;
+                    }
+                }
+                this.totalUsedFluidTypes.set(totalUsedFluidTypes);
+                this.totalMaxFluidTypes.set(totalMaxFluidTypes);
+                value.set(totalUsedFluidTypes <= 0 ? 0 : (double) totalUsedFluidTypes / totalMaxFluidTypes);
+            }
+            return super.onGuiEvent(event);
+        }
+    }
+
+
+    public class GasTypeGraph extends Graph {
+
+        protected final AnimationValue totalUsedGasTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
+        protected final AnimationValue totalMaxGasTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
+
+        public GasTypeGraph(final EStorageGraph graphParent) {
+            super(graphParent,
+                    82, 63,
+                    59, 16,
+                    1,
+                    1, 197,
+                    59, 6,
+                    false, false);
+        }
+
+        @Override
+        public void update(final WidgetGui gui) {
+            super.update(gui);
+            if (!value.isAnimFinished()) {
+                label.setContents(Collections.singletonList(
+                        I18n.format("gui.estorage_controller.graph.gas_type",
+                                NovaEngUtils.formatNumber((long) totalUsedGasTypes.get(), 1),
+                                NovaEngUtils.formatNumber((long) totalMaxGasTypes.get(), 1)
+                        ))
+                );
+            }
+        }
+
+        @Override
+        public boolean onGuiEvent(final GuiEvent event) {
+            if (event instanceof ESGUIDataUpdateEvent) {
+                int totalUsedGasTypes = 0;
+                int totalMaxGasTypes = 0;
+                for (final EStorageCellData data : controllerGUI.getCellDataList()) {
+                    if (data.type() == DriveStorageType.GAS) {
+                        totalUsedGasTypes += data.usedTypes();
+                        totalMaxGasTypes += 25;
+                    }
+                }
+                this.totalUsedGasTypes.set(totalUsedGasTypes);
+                this.totalMaxGasTypes.set(totalMaxGasTypes);
+                value.set(totalUsedGasTypes <= 0 ? 0 : (double) totalUsedGasTypes / totalMaxGasTypes);
+            }
+            return super.onGuiEvent(event);
+        }
+    }
 
     public class EnergyUsageGraph extends Graph {
 
@@ -274,7 +371,7 @@ public class EStorageGraph extends Row {
 
         public EnergyUsageGraph(final EStorageGraph graphParent) {
             super(graphParent,
-                    83, 63,
+                    83, getMekEngLoad() ? 80 : 63,
                     61, 16,
                     1,
                     1, 211,
@@ -317,7 +414,7 @@ public class EStorageGraph extends Row {
 
         public EnergyCapacityGraph(final EStorageGraph graphParent) {
             super(graphParent,
-                    83, 78,
+                    83, getMekEngLoad() ? 97 : 80,
                     60, 16,
                     1,
                     1, 218,
@@ -362,4 +459,8 @@ public class EStorageGraph extends Row {
         }
     }
 
+
+    public boolean getMekEngLoad() {
+        return Mods.MEKENG.isPresent();
+    }
 }

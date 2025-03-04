@@ -1,11 +1,5 @@
 package github.kasuminova.ecoaeextension.client.gui.widget.estorage;
 
-import github.kasuminova.mmce.client.gui.util.MousePos;
-import github.kasuminova.mmce.client.gui.util.RenderPos;
-import github.kasuminova.mmce.client.gui.util.RenderSize;
-import github.kasuminova.mmce.client.gui.util.TextureProperties;
-import github.kasuminova.mmce.client.gui.widget.MultiLineLabel;
-import github.kasuminova.mmce.client.gui.widget.base.WidgetGui;
 import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.client.gui.widget.SizedColumn;
 import github.kasuminova.ecoaeextension.common.block.ecotech.estorage.prop.DriveStorageLevel;
@@ -13,6 +7,13 @@ import github.kasuminova.ecoaeextension.common.block.ecotech.estorage.prop.Drive
 import github.kasuminova.ecoaeextension.common.container.data.EStorageCellData;
 import github.kasuminova.ecoaeextension.common.crafttweaker.util.NovaEngUtils;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageCellDrive;
+import github.kasuminova.mmce.client.gui.util.MousePos;
+import github.kasuminova.mmce.client.gui.util.RenderPos;
+import github.kasuminova.mmce.client.gui.util.RenderSize;
+import github.kasuminova.mmce.client.gui.util.TextureProperties;
+import github.kasuminova.mmce.client.gui.widget.MultiLineLabel;
+import github.kasuminova.mmce.client.gui.widget.base.WidgetGui;
+import hellfirepvp.modularmachinery.common.base.Mods;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 
@@ -54,6 +55,16 @@ public class EStorageCellInfo extends SizedColumn {
             CELL_TYPE_BACKGROUND_WIDTH, CELL_TYPE_BACKGROUND_HEIGHT
     );
 
+    public static final TextureProperties CELL_TYPE_BACKGROUND_GAS = new TextureProperties(BG_TEX_RES,
+            28, 82,
+            CELL_TYPE_BACKGROUND_WIDTH, CELL_TYPE_BACKGROUND_HEIGHT
+    );
+
+    public static final TextureProperties CELL_TYPE_BACKGROUND_EMPTY = new TextureProperties(BG_TEX_RES,
+            1, 82,
+            CELL_TYPE_BACKGROUND_WIDTH, CELL_TYPE_BACKGROUND_HEIGHT
+    );
+
     protected TextureProperties cellBackground = TextureProperties.EMPTY;
     protected TextureProperties cellTypeBackground = TextureProperties.EMPTY;
 
@@ -82,8 +93,10 @@ public class EStorageCellInfo extends SizedColumn {
             case C -> cellBackground = CELL_BACKGROUND_L9;
         }
         switch (data.type()) {
+            case EMPTY -> cellTypeBackground = CELL_TYPE_BACKGROUND_EMPTY;
             case ITEM -> cellTypeBackground = CELL_TYPE_BACKGROUND_ITEM;
             case FLUID -> cellTypeBackground = CELL_TYPE_BACKGROUND_FLUID;
+            case GAS -> cellTypeBackground = Mods.MEKENG.isPresent() ? CELL_TYPE_BACKGROUND_GAS : CELL_TYPE_BACKGROUND_EMPTY;
         }
     }
 
@@ -96,12 +109,13 @@ public class EStorageCellInfo extends SizedColumn {
         long maxBytes = EStorageCellDrive.getMaxBytes(data);
 
         String typeName = I18n.format("gui.estorage_controller.cell_info." + switch (type) {
-            case EMPTY -> "unknown";
+            case EMPTY -> "empty";
             case ITEM -> "item";
             case FLUID -> "fluid";
+            case GAS -> Mods.MEKENG.isPresent() ? "gas" : "empty";
         });
         String levelName = switch (level) {
-            case EMPTY -> "unknown";
+            case EMPTY -> "empty";
             case A -> "L4";
             case B -> "L6";
             case C -> "L9";
