@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "ecoaeextension:items/estorage_cell/l6_matrix_storage_components",
+        "layer1": "ecoaeextension:items/estorage_cell/estorage_cell_e/l6_matrix_storage_components_e"
+    }
+}

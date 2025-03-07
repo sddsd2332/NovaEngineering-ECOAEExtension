@@ -2,7 +2,11 @@ package github.kasuminova.ecoaeextension;
 
 import github.kasuminova.ecoaeextension.common.CommonProxy;
 import github.kasuminova.ecoaeextension.common.network.*;
+import github.kasuminova.ecoaeextension.ecoaeextension.Tags;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -12,21 +16,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-@Mod(modid = ECOAEExtension.MOD_ID, name = ECOAEExtension.MOD_NAME, version = ECOAEExtension.VERSION,
-        dependencies = "required-after:forge@[14.23.5.2847,);" +
-                "required-after:modularmachinery@[2.1.0,);" +
-                "required-after:appliedenergistics2@[v0.56.4,);" +
-                "required-after:mixinbooter@[8.0,);" +
-                "required-after:jei@[4.25.0,);" +
-                "required:theoneprobe@[1.12-1.4.28,);" +
-                "required:ae2fc@[2.6.3-r,);" +
-                "required:lumenized@[1.0.2,);",
-        acceptedMinecraftVersions = "[1.12, 1.13)"
-)
+@Mod(modid = Tags.MOD_ID, useMetadata = true, acceptedMinecraftVersions = "[1.12, 1.13)", version = Tags.VERSION)
+@Mod.EventBusSubscriber()
 @SuppressWarnings("MethodMayBeStatic")
 public class ECOAEExtension {
-    public static final String MOD_ID = "ecoaeextension";
-    public static final String MOD_NAME = "Nova Engineering - ECO AE Extension";
+    public static final String MOD_ID = Tags.MOD_ID;
 
     public static final String VERSION = Tags.VERSION;
 
@@ -36,20 +30,20 @@ public class ECOAEExtension {
     public static final SimpleNetworkWrapper NET_CHANNEL = NetworkRegistry.INSTANCE.newSimpleChannel(MOD_ID);
 
 
-    @Mod.Instance(MOD_ID)
-    public static ECOAEExtension instance = null;
+    @Instance(MOD_ID)
+    public static ECOAEExtension instance;
     @SidedProxy(clientSide = CLIENT_PROXY, serverSide = COMMON_PROXY)
     public static CommonProxy proxy = null;
     public static Logger log = LogManager.getLogger(MOD_ID);
 
 
-    @Mod.EventHandler
+    @EventHandler
     public void construction(FMLConstructionEvent event) {
         proxy.construction();
     }
 
     @SuppressWarnings("ValueOfIncrementOrDecrementUsed")
-    @Mod.EventHandler
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         event.getModMetadata().version = VERSION;
 
@@ -72,21 +66,21 @@ public class ECOAEExtension {
         proxy.preInit();
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(this);
         proxy.init();
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
         proxy.loadComplete();
     }
-
 
 
 }

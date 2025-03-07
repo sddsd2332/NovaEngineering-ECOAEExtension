@@ -1,0 +1,35 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "ecoaeextension:blocks/storage_array_drives_b0_off_gas",
+		"2": "ecoaeextension:blocks/bloom/storage_array_drives_b0_off_gas",
+		"particle": "ecoaeextension:blocks/0"
+	},
+	"elements": [
+		{
+			"from": [2, 2, 0.5],
+			"to": [8, 14, 11],
+			"faces": {
+				"north": {"uv": [8, 2, 14, 14], "texture": "#1"},
+				"east": {"uv": [8, 2, 9, 14], "texture": "#1"},
+				"south": {"uv": [8, 2, 14, 14], "texture": "#1"},
+				"west": {"uv": [13, 2, 14, 14], "texture": "#1"},
+				"up": {"uv": [14, 2, 8, 3], "texture": "#1"},
+				"down": {"uv": [14, 13, 8, 14], "texture": "#1"}
+			}
+		},
+		{
+			"name": "bloom",
+			"from": [2, 2, 0.5],
+			"to": [8, 14, 11],
+			"faces": {
+				"north": {"uv": [8, 2, 14, 14], "texture": "#2"},
+				"east": {"uv": [8, 2, 9, 14], "texture": "#2"},
+				"south": {"uv": [8, 2, 14, 14], "texture": "#2"},
+				"west": {"uv": [13, 2, 14, 14], "texture": "#2"},
+				"up": {"uv": [14, 2, 8, 3], "texture": "#2"},
+				"down": {"uv": [14, 13, 8, 14], "texture": "#2"}
+			}
+		}
+	]
+}

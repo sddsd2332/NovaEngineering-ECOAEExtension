@@ -101,6 +101,16 @@
         {
             "when": {
                 "facing": "north",
+                "storage_level": "a",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_a/storage_array_drives_a0_gas"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
                 "storage_level": "b",
                 "storage_type": "item"
             },
@@ -116,6 +126,16 @@
             },
             "apply": {
                 "model": "ecoaeextension:storage_array_drives_b/storage_array_drives_b0_fl"
+            }
+        },
+        {
+            "when": {
+                "facing": "north",
+                "storage_level": "b",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_b/storage_array_drives_b0_gas"
             }
         },
         {
@@ -140,6 +160,16 @@
         },
         {
             "when": {
+                "facing": "north",
+                "storage_level": "c",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_c/storage_array_drives_c0_gas"
+            }
+        },
+        {
+            "when": {
                 "facing": "south",
                 "storage_level": "a",
                 "storage_type": "item"
@@ -157,6 +187,17 @@
             },
             "apply": {
                 "model": "ecoaeextension:storage_array_drives_a/storage_array_drives_a0_fl",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
+                "storage_level": "a",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_a/storage_array_drives_a0_gas",
                 "y": 180
             }
         },
@@ -185,6 +226,17 @@
         {
             "when": {
                 "facing": "south",
+                "storage_level": "b",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_b/storage_array_drives_b0_gas",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south",
                 "storage_level": "c",
                 "storage_type": "item"
             },
@@ -206,6 +258,17 @@
         },
         {
             "when": {
+                "facing": "south",
+                "storage_level": "c",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_c/storage_array_drives_c0_gas",
+                "y": 180
+            }
+        },
+        {
+            "when": {
                 "facing": "west",
                 "storage_level": "a",
                 "storage_type": "item"
@@ -223,6 +286,17 @@
             },
             "apply": {
                 "model": "ecoaeextension:storage_array_drives_a/storage_array_drives_a0_fl",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "a",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_a/storage_array_drives_a0_gas",
                 "y": 270
             }
         },
@@ -251,6 +325,17 @@
         {
             "when": {
                 "facing": "west",
+                "storage_level": "b",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_b/storage_array_drives_b0_gas",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
                 "storage_level": "c",
                 "storage_type": "item"
             },
@@ -267,6 +352,17 @@
             },
             "apply": {
                 "model": "ecoaeextension:storage_array_drives_c/storage_array_drives_c0_fl",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west",
+                "storage_level": "c",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_c/storage_array_drives_c0_gas",
                 "y": 270
             }
         },
@@ -295,6 +391,17 @@
         {
             "when": {
                 "facing": "east",
+                "storage_level": "a",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_a/storage_array_drives_a0_gas",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
                 "storage_level": "b",
                 "storage_type": "item"
             },
@@ -317,6 +424,17 @@
         {
             "when": {
                 "facing": "east",
+                "storage_level": "b",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_b/storage_array_drives_b0_gas",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
                 "storage_level": "c",
                 "storage_type": "item"
             },
@@ -333,6 +451,17 @@
             },
             "apply": {
                 "model": "ecoaeextension:storage_array_drives_c/storage_array_drives_c0_fl",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east",
+                "storage_level": "c",
+                "storage_type": "gas"
+            },
+            "apply": {
+                "model": "ecoaeextension:storage_array_drives_c/storage_array_drives_c0_gas",
                 "y": 90
             }
         },

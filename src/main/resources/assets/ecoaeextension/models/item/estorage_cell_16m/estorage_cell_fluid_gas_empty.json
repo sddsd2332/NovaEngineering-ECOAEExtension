@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "ecoaeextension:items/estorage_cell_disks/estorage_cell_disks_a1_gas_16m",
+        "layer1": "ecoaeextension:items/estorage_cell_disks/estorage_cell_disks_e/estorage_cell_disks_a1_gas_16m_e"
+    }
+}

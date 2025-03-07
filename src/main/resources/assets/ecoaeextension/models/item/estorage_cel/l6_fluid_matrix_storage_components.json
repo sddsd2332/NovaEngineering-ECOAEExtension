@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "ecoaeextension:items/estorage_cell_disks/l6_fluid_matrix_storage_components",
+        "layer1": "ecoaeextension:items/estorage_cell_disks/estorage_cell_disks_e/l6_fluid_matrix_storage_components_e"
+    }
+}
