@@ -248,6 +248,9 @@ public class ECalculatorController extends EPartController<ECalculatorPart> {
     }
 
     public void onClusterChanged() {
+        if (channel != null) {
+            channel.postCPUClusterChangeEvent();
+        }
     }
 
     public int getSharedParallelism() {
