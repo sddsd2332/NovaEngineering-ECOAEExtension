@@ -253,3 +253,16 @@ modularmachinery.extendable_digital_storage_subsystem_l9=§9ECO - §5L9 §9可�
 modularmachinery.extendable_fabricator_subsystem_l4=§9ECO - §bF4 §e可扩展合成子系统
 modularmachinery.extendable_fabricator_subsystem_l6=§9ECO - §bF6 §e可扩展合成子系统
 modularmachinery.extendable_fabricator_subsystem_l9=§9ECO - §bF9 §e可扩展合成子系统
+
+# GUI Colors - ARGB
+gui.color.ecoaeextension.SearchboxFocused=6E000000
+gui.color.ecoaeextension.SearchboxUnfocused=00000000
+gui.color.ecoaeextension.ItemSlotOverlayUnpowered=66111111
+gui.color.ecoaeextension.ItemSlotOverlayInvalid=66ff6666
+gui.color.ecoaeextension.CraftConfirmMissingItem=1AFF0000
+gui.color.ecoaeextension.CraftingCPUActive=5A45A021
+gui.color.ecoaeextension.CraftingCPUScheduled=FF787878
+gui.color.ecoaeextension.InterfaceTerminalMatch=2A00FF00
+gui.color.ecoaeextension.ProcessBarStartColor=FFE60A00
+gui.color.ecoaeextension.ProcessBarMiddleColor=FFE6E600
+gui.color.ecoaeextension.ProcessBarEndColor=FF0AE600
