@@ -28,6 +28,8 @@ public class MixinGuiPatternTerm extends GuiMEMonitorable {
 
     @Unique
     private GuiTabButton ecoaeextension$uploadPatternButton;
+    @Unique
+    private boolean ecoaeextension$tabAligned = false;
 
     @SuppressWarnings("DataFlowIssue")
     public MixinGuiPatternTerm() {
@@ -36,10 +38,35 @@ public class MixinGuiPatternTerm extends GuiMEMonitorable {
 
     @Inject(method = "initGui", at = @At("RETURN"))
     private void injectInitGui(final CallbackInfo ci) {
-        int yOffset = Loader.isModLoaded("crazyae") ? 133 : 155;
-        ecoaeextension$uploadPatternButton = new GuiTabButton(this.guiLeft + 173, this.guiTop + this.ySize - yOffset, new ItemStack(BlockEFabricatorController.L4), I18n.format("gui.efabricator.button.upload_pattern"), this.itemRender
+        // 基准位置与 AE2 默认 UI 对齐。
+        final int baseX = this.guiLeft + 173;
+        final int baseY = this.guiTop + this.ySize - 155;
+        ecoaeextension$uploadPatternButton = new GuiTabButton(
+            baseX,
+            baseY,
+            new ItemStack(BlockEFabricatorController.L4),
+            I18n.format("gui.efabricator.button.upload_pattern"),
+            this.itemRender
         );
+
         this.buttonList.add(this.ecoaeextension$uploadPatternButton);
+
+        // 若安装了 CrazyAE，则将本按钮锁定到同列（相同 X）的其他 Tab 按钮的正下方，避免重叠。
+        if (Loader.isModLoaded("crazyae")) {
+            int targetY = baseY;
+            for (final GuiButton b : this.buttonList) {
+                if (b == this.ecoaeextension$uploadPatternButton) {
+                    continue;
+                }
+                if (b instanceof GuiTabButton && b.x == baseX) {
+                    final int candidateY = b.y + b.height; // 下一个选项卡单位
+                    if (candidateY > targetY) {
+                        targetY = candidateY;
+                    }
+                }
+            }
+            this.ecoaeextension$uploadPatternButton.y = targetY;
+        }
     }
 
     @Inject(method = "actionPerformed", at = @At("HEAD"), cancellable = true)
@@ -53,6 +80,24 @@ public class MixinGuiPatternTerm extends GuiMEMonitorable {
     @Inject(method = "drawFG", at = @At("HEAD"), remap = false)
     private void injectDrawFG(final int offsetX, final int offsetY, final int mouseX, final int mouseY, final CallbackInfo ci) {
         ecoaeextension$uploadPatternButton.visible = this.container.isCraftingMode();
+        // 若尚未对齐，且安装了 CrazyAE，则在绘制阶段执行一次位置锁定，保证与其按钮对齐。
+        if (!ecoaeextension$tabAligned && Loader.isModLoaded("crazyae")) {
+            final int baseX = this.guiLeft + 173;
+            int targetY = this.guiTop + this.ySize - 155;
+            for (final GuiButton b : this.buttonList) {
+                if (b == this.ecoaeextension$uploadPatternButton) {
+                    continue;
+                }
+                if (b instanceof GuiTabButton && b.x == baseX) {
+                    final int candidateY = b.y + b.height;
+                    if (candidateY > targetY) {
+                        targetY = candidateY;
+                    }
+                }
+            }
+            this.ecoaeextension$uploadPatternButton.y = targetY;
+            ecoaeextension$tabAligned = true;
+        }
     }
 
 }
