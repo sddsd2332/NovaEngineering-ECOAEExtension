@@ -3,7 +3,6 @@ package github.kasuminova.ecoaeextension;
 import github.kasuminova.ecoaeextension.common.CommonProxy;
 import github.kasuminova.ecoaeextension.common.network.*;
 import github.kasuminova.ecoaeextension.ecoaeextension.Tags;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -63,7 +62,9 @@ public class ECOAEExtension {
         NET_CHANNEL.registerMessage(PktEFabricatorGUIAction.class, PktEFabricatorGUIAction.class, start++, Side.SERVER);
         NET_CHANNEL.registerMessage(PktEFabricatorPatternSearchGUIAction.class, PktEFabricatorPatternSearchGUIAction.class, start++, Side.SERVER);
 
+        CommonProxy.loadModData(event.getModConfigurationDirectory());
         proxy.preInit();
+
     }
 
     @EventHandler

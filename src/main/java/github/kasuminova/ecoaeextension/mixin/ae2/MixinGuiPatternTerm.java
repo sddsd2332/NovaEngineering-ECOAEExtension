@@ -10,7 +10,6 @@ import github.kasuminova.ecoaeextension.common.network.PktPatternTermUploadPatte
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Loader;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,13 +18,19 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Mixin(GuiPatternTerm.class)
 public class MixinGuiPatternTerm extends GuiMEMonitorable {
 
     @Final
     @Shadow(remap = false)
     private ContainerPatternEncoder container;
-
+    @Shadow(remap = false)
+    private GuiTabButton tabCraftButton;
+    @Shadow(remap = false)
+    private GuiTabButton tabProcessButton;
     @Unique
     private GuiTabButton ecoaeextension$uploadPatternButton;
 
@@ -34,31 +39,40 @@ public class MixinGuiPatternTerm extends GuiMEMonitorable {
         super(null, null);
     }
 
-    @Inject(method = "initGui", at = @At("RETURN"))
-    private void injectInitGui(final CallbackInfo ci) {
-        int baseX = this.guiLeft + 173;
-        int baseY = this.guiTop + this.ySize - 155;
-        ecoaeextension$uploadPatternButton = new GuiTabButton(baseX, baseY, new ItemStack(BlockEFabricatorController.L4), I18n.format("gui.efabricator.button.upload_pattern"), this.itemRender);
-        this.buttonList.add(this.ecoaeextension$uploadPatternButton);
-        if (Loader.isModLoaded("crazyae")) {
-            int targetY = baseY;
-            for (final GuiButton b : this.buttonList) {
-                if (b == this.ecoaeextension$uploadPatternButton) {
-                    continue;
-                }
-                if (b instanceof GuiTabButton && b.x == baseX) {
-                    int candidateY = b.y + b.height;
-                    if (candidateY > targetY) {
-                        targetY = candidateY;
+    //确保我们是最后注入的
+    @Inject(method = "initGui", at = @At("TAIL"), order = 9999)
+    private void injectInitGui(CallbackInfo ci) {
+        int baseX = guiLeft + 173;
+        int baseY = guiTop + ySize - 177;
+        int offsetY = baseY + 22;
+        ecoaeextension$uploadPatternButton = new GuiTabButton(baseX, offsetY, new ItemStack(BlockEFabricatorController.L4), I18n.format("gui.efabricator.button.upload_pattern"), this.itemRender);
+        this.buttonList.add(ecoaeextension$uploadPatternButton);
+        //让其他的MOD添加的tab在我们的后面
+        int targetY = offsetY;
+        //获取其他mod的tab按钮
+        List<GuiButton> buttons = buttonList.stream().filter(list -> list instanceof GuiTabButton button && button != tabProcessButton && button != tabCraftButton && button != ecoaeextension$uploadPatternButton).collect(Collectors.toList());
+        if (!buttons.isEmpty()) {
+            for (GuiButton b : buttons) {
+                if (b instanceof GuiTabButton tab) {
+                    if (tab.isVisible()) {
+                        if (tab.x == baseX) {
+                            int candidateY = tab.y + tab.height;
+                            if (candidateY > targetY) {
+                                targetY = candidateY;
+                            }
+                            //重新应用tab的Y位置
+                            tab.y = targetY;
+                            int baseOffsetY = baseY % tab.height;
+                            tab.y = tab.y - (tab.y % tab.height) + baseOffsetY;
+                        }
                     }
                 }
             }
-            this.ecoaeextension$uploadPatternButton.y = targetY;
         }
     }
 
     @Inject(method = "actionPerformed", at = @At("HEAD"), cancellable = true)
-    private void injectActionPerformed(final GuiButton btn, final CallbackInfo ci) {
+    private void injectActionPerformed(GuiButton btn, CallbackInfo ci) {
         if (btn == ecoaeextension$uploadPatternButton) {
             ECOAEExtension.NET_CHANNEL.sendToServer(new PktPatternTermUploadPattern());
             ci.cancel();
@@ -66,8 +80,8 @@ public class MixinGuiPatternTerm extends GuiMEMonitorable {
     }
 
     @Inject(method = "drawFG", at = @At("HEAD"), remap = false)
-    private void injectDrawFG(final int offsetX, final int offsetY, final int mouseX, final int mouseY, final CallbackInfo ci) {
-        ecoaeextension$uploadPatternButton.visible = this.container.isCraftingMode();
+    private void injectDrawFG(int offsetX, int offsetY, int mouseX, int mouseY, CallbackInfo ci) {
+        ecoaeextension$uploadPatternButton.visible = container.isCraftingMode();
     }
 
 }

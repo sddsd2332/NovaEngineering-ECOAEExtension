@@ -2,6 +2,7 @@ package github.kasuminova.ecoaeextension.common;
 
 import appeng.api.AEApi;
 import appeng.api.storage.ICellHandler;
+import github.kasuminova.ecoaeextension.common.data.ModDataHolder;
 import github.kasuminova.mmce.common.integration.ModIntegrationAE2;
 import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.common.container.*;
@@ -29,10 +30,13 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import javax.annotation.Nullable;
+import java.io.File;
 import java.util.List;
 
 @SuppressWarnings("MethodMayBeStatic")
 public class CommonProxy implements IGuiHandler {
+
+    public static final ModDataHolder dataHolder = new ModDataHolder();
 
     public CommonProxy() {
         MinecraftForge.EVENT_BUS.register(new RegistryBlocks());
@@ -41,6 +45,13 @@ public class CommonProxy implements IGuiHandler {
 
     public void construction() {
 
+    }
+
+    public static void loadModData(File configDir) {
+        dataHolder.setup(configDir);
+        if (dataHolder.requiresDefaultMachinery()) {
+            dataHolder.copyDefaultMachinery();
+        }
     }
 
     public void preInit() {

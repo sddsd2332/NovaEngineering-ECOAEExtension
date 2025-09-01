@@ -1,17 +1,10 @@
-package github.kasuminova.ecoaeextension.mixin.mmce;
+package github.kasuminova.ecoaeextension.common.data;
 
 import github.kasuminova.ecoaeextension.ECOAEExtension;
-
-import hellfirepvp.modularmachinery.common.data.ModDataHolder;
+import hellfirepvp.modularmachinery.ModularMachinery;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 import org.apache.commons.io.IOUtils;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -22,24 +15,41 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Iterator;
 
-//TODO:改成检查配置文件内是否含有ECOAEExtension文件夹
-@Mixin(ModDataHolder.class)
-public class MixinModDataHolder {
+public class ModDataHolder {
 
-    @Shadow(remap = false)
-    private File machineryDir;
+    private File ecomachineryDir;
+    private boolean requiresDefaultMachinery;
 
-    @Inject(method = "copyDefaultMachinery",at = @At(value = "TAIL"),remap = false)
-    public void copyDefaultMachinery(CallbackInfo ci) {
-        File eco = new File(machineryDir, "ECOAEExtension");
-        if (!eco.exists()) {
-            eco.mkdirs();
+    public void setup(File configDir) {
+        File mainDir = new File(configDir, ModularMachinery.MODID);
+        if (!mainDir.exists()) {
+            mainDir.mkdirs();
         }
-        novaEngineering_Core$copy("default_machinery", eco);
+
+        File machineryDir = new File(mainDir, "machinery");
+        if (!machineryDir.exists()) {
+            machineryDir.mkdirs();
+        }
+
+        ecomachineryDir = new File(machineryDir, "ECOAEExtension");
+        if (!ecomachineryDir.exists()) {
+            requiresDefaultMachinery = true;
+            ecomachineryDir.mkdirs();
+        }
+
     }
 
-    @Unique
-    private void novaEngineering_Core$copy(String assetDirFrom, File directoryTo) {
+    public boolean requiresDefaultMachinery() {
+        boolean old = requiresDefaultMachinery;
+        requiresDefaultMachinery = false;
+        return old;
+    }
+
+    public void copyDefaultMachinery() {
+        copy("default_machinery", ecomachineryDir);
+    }
+
+    private void copy(String assetDirFrom, File directoryTo) {
         ModContainer thisMod = Loader.instance().getIndexedModList().get(ECOAEExtension.MOD_ID);
         if (thisMod == null) {
             ModContainer active = Loader.instance().activeModContainer();
@@ -56,7 +66,7 @@ public class MixinModDataHolder {
             Path root = null;
             if (modSource.isFile()) {
                 try {
-                    fs = FileSystems.newFileSystem(modSource.toPath(),null);
+                    fs = FileSystems.newFileSystem(modSource.toPath(), null);
                     root = fs.getPath("/assets/" + ECOAEExtension.MOD_ID + "/" + assetDirFrom);
                 } catch (IOException e) {
                     ECOAEExtension.log.error("Error loading FileSystem from jar: ", e);
