@@ -12,7 +12,6 @@ import com.llamalad7.mixinextras.sugar.Local;
 import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.common.block.ecotech.ecalculator.prop.Levels;
 import github.kasuminova.ecoaeextension.common.ecalculator.ECPUStatus;
-import github.kasuminova.ecoaeextension.common.integration.ae2.core.GuiColors;
 import github.kasuminova.mmce.client.gui.util.RenderPos;
 import github.kasuminova.mmce.client.gui.util.TextureProperties;
 import net.minecraft.client.gui.FontRenderer;
@@ -147,17 +146,17 @@ public abstract class MixinGuiCraftingStatus extends AEBaseGui {
         GL11.glPushMatrix();
         GL11.glTranslatef(x + 3, y + 11, 0);
         final IAEItemStack craftingStack = cpu.getCrafting();
+        GL11.glScalef(0.5f, 0.5f, 1.0f);
+        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        if (ecLevel == Levels.L4) {
+            novaeng_ec$L4_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
+        } else if (ecLevel == Levels.L6) {
+            novaeng_ec$L6_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
+        } else if (ecLevel == Levels.L9) {
+            novaeng_ec$L9_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
+        }
+        GL11.glTranslatef(18.0f, 3.5f, 0.0f);
         if (craftingStack != null) {
-            GL11.glScalef(0.5f, 0.5f, 1.0f);
-            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            if (ecLevel == Levels.L4) {
-                novaeng_ec$L4_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
-            } else if (ecLevel == Levels.L6) {
-                novaeng_ec$L6_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
-            } else if (ecLevel == Levels.L9) {
-                novaeng_ec$L9_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
-            }
-            GL11.glTranslatef(18.0f, 3.5f, 0.0f);
             String amount = Long.toString(craftingStack.getStackSize());
             if (amount.length() > 9) {
                 amount = amount.substring(0, 9) + "..";
@@ -166,60 +165,13 @@ public abstract class MixinGuiCraftingStatus extends AEBaseGui {
             font.drawString(amount, 0, 0, 0x009000);
             GL11.glPopMatrix();
             GL11.glPushMatrix();
-            double craftingPercentage = (double) (cpu.getTotalItems() - Math.max(cpu.getRemainingItems(), 0)) / (double) cpu.getTotalItems();
-            drawRect(x, y + CPU_TABLE_SLOT_HEIGHT - 3, x + (int) ((CPU_TABLE_SLOT_WIDTH - 1) * craftingPercentage), y + CPU_TABLE_SLOT_HEIGHT - 2, this.calculateGradientColor(craftingPercentage));
             GL11.glTranslatef(x + CPU_TABLE_SLOT_WIDTH - (19 + 4), y + 3, 0);
             this.drawItem(0, 0, craftingStack.createItemStack());
         } else {
-            GL11.glScalef(0.5f, 0.5f, 1.0f);
-            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            if (ecLevel == Levels.L4) {
-                novaeng_ec$L4_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
-            } else if (ecLevel == Levels.L6) {
-                novaeng_ec$L6_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
-            } else if (ecLevel == Levels.L9) {
-                novaeng_ec$L9_CELL.render(new RenderPos(2, 0), (AEBaseGui) (Object) this);
-            }
-            GL11.glTranslatef(18.0f, 3.5f, 0.0f);
             GL11.glScalef(1.5f, 1.5f, 1.0f);
             font.drawString(cpu.formatStorage(), 0, 0, textColor);
         }
         GL11.glPopMatrix();
-    }
-
-
-    private static int processBarStartColorInt = GuiColors.ProcessBarStartColor.getColor();
-    private static final int[] PROCESS_BAR_START_COLOR_INT_ARR = new int[]{(processBarStartColorInt >> 24) & 0xFF,
-            (processBarStartColorInt >> 16) & 0xFF, (processBarStartColorInt >> 8) & 0xFF,
-            processBarStartColorInt & 0xFF};
-
-    private static int processBarMiddleColorInt = GuiColors.ProcessBarMiddleColor.getColor();
-    private static final int[] PROCESS_BAR_MIDDLE_COLOR_INT_ARR = new int[]{(processBarMiddleColorInt >> 24) & 0xFF,
-            (processBarMiddleColorInt >> 16) & 0xFF, (processBarMiddleColorInt >> 8) & 0xFF,
-            processBarMiddleColorInt & 0xFF};
-
-    private static int processBarEndColorInt = GuiColors.ProcessBarEndColor.getColor();
-    private static final int[] PROCESS_BAR_END_COLOR_INT_ARR = new int[]{(processBarEndColorInt >> 24) & 0xFF,
-            (processBarEndColorInt >> 16) & 0xFF, (processBarEndColorInt >> 8) & 0xFF, processBarEndColorInt & 0xFF};
-
-    private int calculateGradientColor(double percentage) {
-        int start[] = null;
-        int end[] = null;
-        double ratio = 0;
-        if (percentage <= 0.5) {
-            start = PROCESS_BAR_START_COLOR_INT_ARR;
-            end = PROCESS_BAR_MIDDLE_COLOR_INT_ARR;
-            ratio = percentage * 2;
-        } else {
-            start = PROCESS_BAR_MIDDLE_COLOR_INT_ARR;
-            end = PROCESS_BAR_END_COLOR_INT_ARR;
-            ratio = (percentage - 0.5d) * 2;
-        }
-        int a = (int) (start[0] + ratio * (end[0] - start[0]));
-        int r = (int) (start[1] + ratio * (end[1] - start[1]));
-        int g = (int) (start[2] + ratio * (end[2] - start[2]));
-        int b = (int) (start[3] + ratio * (end[3] - start[3]));
-        return (a << 24) | (r << 16) | (g << 8) | (b);
     }
 
 }

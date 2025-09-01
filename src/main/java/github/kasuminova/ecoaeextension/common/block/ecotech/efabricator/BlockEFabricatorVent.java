@@ -59,5 +59,5 @@ public class BlockEFabricatorVent extends BlockEFabricator {
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, FacingProp.HORIZONTALS);
     }
-    
+
 }

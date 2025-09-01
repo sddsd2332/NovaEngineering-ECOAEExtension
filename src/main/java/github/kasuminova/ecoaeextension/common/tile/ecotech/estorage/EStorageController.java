@@ -76,8 +76,8 @@ public class EStorageController extends EPartController<EStoragePart> {
         if (part instanceof EStorageEnergyCell energyCell) {
             energyCellsMax.add(energyCell);
             energyCellsMin.add(energyCell);
-        } else if (part instanceof EStorageMEChannel channel) {
-            this.channel = channel;
+        } else if (part instanceof EStorageMEChannel c) {
+            this.channel = c;
         }
     }
 

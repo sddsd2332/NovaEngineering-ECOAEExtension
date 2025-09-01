@@ -22,3 +22,4 @@ public class EFPatternSearchContentUpdateEvent extends GuiEvent {
     }
 
 }
+

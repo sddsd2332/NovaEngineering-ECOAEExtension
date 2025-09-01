@@ -27,6 +27,7 @@ import hellfirepvp.modularmachinery.ModularMachinery;
 import hellfirepvp.modularmachinery.client.ClientProxy;
 import hellfirepvp.modularmachinery.common.machine.MachineRegistry;
 import hellfirepvp.modularmachinery.common.util.ItemUtils;
+import it.unimi.dsi.fastutil.objects.Object2ObjectAVLTreeMap;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -261,8 +262,8 @@ public class EFabricatorController extends EPartController<EFabricatorPart> {
 
     @Override
     protected void onAddPart(final EFabricatorPart part) {
-        if (part instanceof EFabricatorMEChannel channel) {
-            this.channel = channel;
+        if (part instanceof EFabricatorMEChannel channelc) {
+            this.channel = channelc;
         }
     }
 
@@ -281,7 +282,7 @@ public class EFabricatorController extends EPartController<EFabricatorPart> {
                 .filter(modifier -> modifier.isBuff() || !activeCooling) // 主动冷却移除超频的负面效果。
                 .collect(Collectors.groupingBy(
                         Modifier::getType,
-                        () -> new TreeMap<>(Comparator.comparingInt(EFabricatorParallelProc.Type::getPriority)),
+                        () -> new Object2ObjectAVLTreeMap<>(Comparator.comparingInt(EFabricatorParallelProc.Type::getPriority)),
                         Collectors.toList())
                 );
 
@@ -349,11 +350,14 @@ public class EFabricatorController extends EPartController<EFabricatorPart> {
 
     public boolean offerWork(EFabricatorWorker.CraftWork work) {
         boolean success = false;
-        for (EFabricatorWorker fabricatorWorker : getWorkers()) {
-            if (!fabricatorWorker.isFull()) {
-                fabricatorWorker.offerWork(work);
+        for (EFabricatorWorker worker : getWorkers()) {
+            if (!worker.isFull()) {
+                var i = worker.getRemainingSpace();
+                worker.offerWork(work.split(i));
                 success = true;
-                break;
+                if (work.getSize() < 1) {
+                    break;
+                }
             }
         }
         if (success && activeCooling && !speedupApplied) {

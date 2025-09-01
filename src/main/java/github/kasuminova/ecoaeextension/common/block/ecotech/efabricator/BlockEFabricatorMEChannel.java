@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 @SuppressWarnings("deprecation")
 public class BlockEFabricatorMEChannel extends BlockEFabricatorPart {
-    
+
     public static final BlockEFabricatorMEChannel INSTANCE = new BlockEFabricatorMEChannel();
 
     protected BlockEFabricatorMEChannel() {

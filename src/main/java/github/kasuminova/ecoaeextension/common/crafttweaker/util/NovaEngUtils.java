@@ -74,12 +74,4 @@ public class NovaEngUtils {
         return formatDouble((num1 / num2) * 100D, 2) + "%";
     }
 
-
-    public static String formatFLOPS(double value) {
-        if (value < 1000.0F) {
-            return formatDouble(value, 1) + "T FloPS";
-        }
-        return formatDouble(value / 1000.0D, 1) + "P FloPS";
-    }
-
 }

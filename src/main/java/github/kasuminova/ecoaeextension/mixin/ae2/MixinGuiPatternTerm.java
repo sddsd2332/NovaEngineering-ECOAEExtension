@@ -36,10 +36,25 @@ public class MixinGuiPatternTerm extends GuiMEMonitorable {
 
     @Inject(method = "initGui", at = @At("RETURN"))
     private void injectInitGui(final CallbackInfo ci) {
-        int yOffset = Loader.isModLoaded("crazyae") ? 133 : 155;
-        ecoaeextension$uploadPatternButton = new GuiTabButton(this.guiLeft + 173, this.guiTop + this.ySize - yOffset, new ItemStack(BlockEFabricatorController.L4), I18n.format("gui.efabricator.button.upload_pattern"), this.itemRender
-        );
+        int baseX = this.guiLeft + 173;
+        int baseY = this.guiTop + this.ySize - 155;
+        ecoaeextension$uploadPatternButton = new GuiTabButton(baseX, baseY, new ItemStack(BlockEFabricatorController.L4), I18n.format("gui.efabricator.button.upload_pattern"), this.itemRender);
         this.buttonList.add(this.ecoaeextension$uploadPatternButton);
+        if (Loader.isModLoaded("crazyae")) {
+            int targetY = baseY;
+            for (final GuiButton b : this.buttonList) {
+                if (b == this.ecoaeextension$uploadPatternButton) {
+                    continue;
+                }
+                if (b instanceof GuiTabButton && b.x == baseX) {
+                    int candidateY = b.y + b.height;
+                    if (candidateY > targetY) {
+                        targetY = candidateY;
+                    }
+                }
+            }
+            this.ecoaeextension$uploadPatternButton.y = targetY;
+        }
     }
 
     @Inject(method = "actionPerformed", at = @At("HEAD"), cancellable = true)

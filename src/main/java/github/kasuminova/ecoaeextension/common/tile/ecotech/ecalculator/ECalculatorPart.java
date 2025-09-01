@@ -7,7 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import javax.annotation.Nullable;
 
 public abstract class ECalculatorPart extends AbstractEPart<ECalculatorController> {
-    
+
     protected Levels controllerLevel = null;
 
     @Nullable

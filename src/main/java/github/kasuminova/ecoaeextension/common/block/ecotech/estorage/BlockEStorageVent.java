@@ -15,7 +15,7 @@ import javax.annotation.Nonnull;
 
 @SuppressWarnings("deprecation")
 public class BlockEStorageVent extends BlockEStorage {
-    
+
     public static final BlockEStorageVent INSTANCE = new BlockEStorageVent();
 
     protected BlockEStorageVent() {
@@ -57,5 +57,5 @@ public class BlockEStorageVent extends BlockEStorage {
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, FacingProp.HORIZONTALS);
     }
-    
+
 }

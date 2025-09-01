@@ -16,3 +16,4 @@ public class ESGraphFocusUpdateEvent extends GuiEvent {
         return graph;
     }
 }
+

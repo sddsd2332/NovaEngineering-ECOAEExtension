@@ -123,7 +123,7 @@ public class MonitorPanel extends SizedRow {
                     final String maxThreads = String.valueOf(this.maxThreads);
                     final String maxHyperThreads = String.valueOf(this.maxHyperThreads);
                     final String formatted = String.format("%s (%s%s%s) / %s (%s%s%s)",
-                            threads, 
+                            threads,
                             TextFormatting.RED, hyperThreads, TextFormatting.RESET,
                             maxThreads,
                             TextFormatting.YELLOW, maxHyperThreads, TextFormatting.RESET

@@ -101,14 +101,14 @@ public class EFabricatorParallelProc extends EFabricatorPart {
             switch (type) {
                 case ADD -> {
                     return isBuff()
-                            ? I18n.format("novaeng.efabricator_parallel_proc.modifier.add", value) 
+                            ? I18n.format("novaeng.efabricator_parallel_proc.modifier.add", value)
                             : I18n.format("novaeng.efabricator_parallel_proc.modifier.sub", Math.abs(value));
                 }
                 case MULTIPLY -> {
                     return isBuff()
-                            ? I18n.format("novaeng.efabricator_parallel_proc.modifier.mul", 
-                            NovaEngUtils.formatDouble((1D - value) * 100, 1)) 
-                            : I18n.format("novaeng.efabricator_parallel_proc.modifier.mul.debuff", 
+                            ? I18n.format("novaeng.efabricator_parallel_proc.modifier.mul",
+                            NovaEngUtils.formatDouble((1D - value) * 100, 1))
+                            : I18n.format("novaeng.efabricator_parallel_proc.modifier.mul.debuff",
                             NovaEngUtils.formatDouble(Math.abs(1D - value) * 100, 1));
                 }
             }

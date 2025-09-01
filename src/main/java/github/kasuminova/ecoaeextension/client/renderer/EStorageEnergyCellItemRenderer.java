@@ -1,5 +1,6 @@
 package github.kasuminova.ecoaeextension.client.renderer;
 
+import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.common.block.ecotech.estorage.prop.EnergyCellStatus;
 import github.kasuminova.ecoaeextension.common.item.estorage.ItemBlockEStorageEnergyCell;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageEnergyCell;
@@ -13,11 +14,11 @@ import net.minecraft.util.ResourceLocation;
 import javax.annotation.Nonnull;
 
 public class EStorageEnergyCellItemRenderer implements ItemMeshDefinition {
-    
+
     protected final ResourceLocation modelLocation;
 
     public EStorageEnergyCellItemRenderer(ItemBlockEStorageEnergyCell item, String level) {
-        this.modelLocation = new ResourceLocation("ecoaeextension", "estorage_energy_cell_" + level);
+        this.modelLocation = new ResourceLocation(ECOAEExtension.MOD_ID, "estorage_energy_cell_" + level);
         for (EnergyCellStatus status : EnergyCellStatus.values()) {
             ModelBakery.registerItemVariants(item, new ModelResourceLocation(
                     modelLocation, "facing=north," + EnergyCellStatus.STATUS.getName() + "=" + status.getName())

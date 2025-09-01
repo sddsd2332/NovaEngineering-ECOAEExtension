@@ -25,3 +25,4 @@ public enum ThreadCoreStatus implements IStringSerializable {
     }
 
 }
+

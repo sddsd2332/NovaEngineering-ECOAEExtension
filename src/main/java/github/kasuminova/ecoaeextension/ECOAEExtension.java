@@ -3,6 +3,7 @@ package github.kasuminova.ecoaeextension;
 import github.kasuminova.ecoaeextension.common.CommonProxy;
 import github.kasuminova.ecoaeextension.common.network.*;
 import github.kasuminova.ecoaeextension.ecoaeextension.Tags;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -42,13 +43,12 @@ public class ECOAEExtension {
         proxy.construction();
     }
 
-    @SuppressWarnings("ValueOfIncrementOrDecrementUsed")
+    @SuppressWarnings({"ValueOfIncrementOrDecrementUsed", "UnusedAssignment"})
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         event.getModMetadata().version = VERSION;
 
         byte start = 0;
-
         NET_CHANNEL.registerMessage(PktCellDriveStatusUpdate.class, PktCellDriveStatusUpdate.class, start++, Side.CLIENT);
         NET_CHANNEL.registerMessage(PktEStorageGUIData.class, PktEStorageGUIData.class, start++, Side.CLIENT);
         NET_CHANNEL.registerMessage(PktEFabricatorWorkerStatusUpdate.class, PktEFabricatorWorkerStatusUpdate.class, start++, Side.CLIENT);
@@ -81,6 +81,5 @@ public class ECOAEExtension {
     public void loadComplete(FMLLoadCompleteEvent event) {
         proxy.loadComplete();
     }
-
 
 }

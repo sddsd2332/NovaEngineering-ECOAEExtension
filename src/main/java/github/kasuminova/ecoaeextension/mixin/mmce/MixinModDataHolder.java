@@ -22,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Iterator;
 
+//TODO:改成检查配置文件内是否含有ECOAEExtension文件夹
 @Mixin(ModDataHolder.class)
 public class MixinModDataHolder {
 

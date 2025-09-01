@@ -411,7 +411,7 @@ public class DragBar extends DynamicWidget {
         protected ResourceLocation texLocation = DEFAULT_TEX_RES;
 
         protected float width = 0;
-        protected float height = 0;
+        protected float height;
 
         protected int buttonLeftTexOffsetX = DEFAULT_BUTTON_LEFT_TEX_OFFSET_X;
         protected int buttonLeftTexOffsetY = DEFAULT_BUTTON_LEFT_TEX_OFFSET_Y;

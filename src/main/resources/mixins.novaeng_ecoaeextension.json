@@ -9,6 +9,8 @@
   ],
   "mixins": [
     "MixinMachineRegistry",
-    "MixinModDataHolder"
+    "MixinMEPatternProvider",
+    "MixinModDataHolder",
+    "MixinTaskExecutor"
   ]
 }

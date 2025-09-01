@@ -77,15 +77,15 @@ public class InputBox extends DynamicWidget {
         }
 
         if (GuiScreen.isKeyComboCtrlC(keyCode) ||
-            GuiScreen.isKeyComboCtrlV(keyCode) ||
-            GuiScreen.isKeyComboCtrlX(keyCode) ||
-            GuiScreen.isKeyComboCtrlA(keyCode) ||
-            keyCode == Keyboard.KEY_BACK ||
-            keyCode == Keyboard.KEY_DELETE ||
-            keyCode == Keyboard.KEY_LEFT ||
-            keyCode == Keyboard.KEY_RIGHT ||
-            keyCode == Keyboard.KEY_HOME ||
-            keyCode == Keyboard.KEY_END)
+                GuiScreen.isKeyComboCtrlV(keyCode) ||
+                GuiScreen.isKeyComboCtrlX(keyCode) ||
+                GuiScreen.isKeyComboCtrlA(keyCode) ||
+                keyCode == Keyboard.KEY_BACK ||
+                keyCode == Keyboard.KEY_DELETE ||
+                keyCode == Keyboard.KEY_LEFT ||
+                keyCode == Keyboard.KEY_RIGHT ||
+                keyCode == Keyboard.KEY_HOME ||
+                keyCode == Keyboard.KEY_END)
         {
             final String prev = field.getText();
             final boolean success = field.textboxKeyTyped(typedChar, keyCode);

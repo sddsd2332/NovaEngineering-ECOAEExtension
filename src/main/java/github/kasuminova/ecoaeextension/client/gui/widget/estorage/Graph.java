@@ -28,7 +28,7 @@ public abstract class Graph extends SizedColumn {
     protected final int bgTexY;
     protected final int bgTexWidth;
     protected final int bgTexHeight;
-    
+
     protected final boolean reverseColor;
 
     protected boolean focused = false;

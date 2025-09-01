@@ -11,7 +11,7 @@ public class EStorageEnergyCell extends EStoragePart implements Comparable<EStor
 
     protected double energyStored = 0D;
     protected double maxEnergyStore = 0D;
-    
+
     protected boolean recalculateCap = false;
 
     protected EnergyCellStatus currentStatus = EnergyCellStatus.EMPTY;
@@ -91,7 +91,7 @@ public class EStorageEnergyCell extends EStoragePart implements Comparable<EStor
     public double getMaxEnergyStore() {
         return maxEnergyStore;
     }
-    
+
     public double getFillFactor() {
         return maxEnergyStore == 0 ? 0 : energyStored / maxEnergyStore;
     }

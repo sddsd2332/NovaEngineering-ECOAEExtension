@@ -9,6 +9,7 @@ import github.kasuminova.ecoaeextension.common.item.estorage.EStorageCellItem;
 import github.kasuminova.ecoaeextension.common.item.estorage.ItemBlockEStorageEnergyCell;
 import hellfirepvp.modularmachinery.common.base.Mods;
 import hellfirepvp.modularmachinery.common.item.ItemDynamicColor;
+import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,10 +30,10 @@ import static hellfirepvp.modularmachinery.common.registry.RegistryItems.pending
 public class RegistryItems {
     public static final List<Item> ITEMS_TO_REGISTER = new LinkedList<>();
     public static final List<Item> ITEMS_TO_REGISTER_CT = new LinkedList<>();
-    public static final Map<String, Item> CUSTOM_MODEL_ITEMS_TO_REGISTER_CT = new LinkedHashMap<>();
+    public static final Map<String, Item> CUSTOM_MODEL_ITEMS_TO_REGISTER_CT = new Object2ObjectLinkedOpenHashMap<>();
 
     public static final List<Item> ITEM_MODELS_TO_REGISTER = new LinkedList<>();
-    public static final Map<String, Item> ITEM_CUSTOM_MODELS_TO_REGISTER = new LinkedHashMap<>();
+    public static final Map<String, Item> ITEM_CUSTOM_MODELS_TO_REGISTER = new Object2ObjectLinkedOpenHashMap<>();
 
     @SubscribeEvent
     public void registerItems(RegistryEvent.Register<Item> event) {
@@ -44,13 +45,11 @@ public class RegistryItems {
         ITEMS_TO_REGISTER.add(EStorageCellFluid.LEVEL_A);
         ITEMS_TO_REGISTER.add(EStorageCellFluid.LEVEL_B);
         ITEMS_TO_REGISTER.add(EStorageCellFluid.LEVEL_C);
-
         if (Mods.MEKENG.isPresent()) {
             ITEMS_TO_REGISTER.add(EStorageCellGas.LEVEL_A);
             ITEMS_TO_REGISTER.add(EStorageCellGas.LEVEL_B);
             ITEMS_TO_REGISTER.add(EStorageCellGas.LEVEL_C);
         }
-
         ITEMS_TO_REGISTER.add(ECalculatorCell.L4);
         ITEMS_TO_REGISTER.add(ECalculatorCell.L6);
         ITEMS_TO_REGISTER.add(ECalculatorCell.L9);

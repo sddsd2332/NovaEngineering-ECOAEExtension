@@ -7,6 +7,7 @@ import github.kasuminova.ecoaeextension.ECOAEExtension;
 import github.kasuminova.ecoaeextension.common.block.ecotech.efabricator.prop.WorkerStatus;
 import github.kasuminova.ecoaeextension.common.network.PktEFabricatorWorkerStatusUpdate;
 import hellfirepvp.modularmachinery.common.util.ItemUtils;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -35,6 +36,10 @@ public class EFabricatorWorker extends EFabricatorPart {
     public EFabricatorWorker() {
     }
 
+    public int getRemainingSpace(){
+        return this.getQueueDepth() - this.queue.size();
+    }
+
     public synchronized int doWork() {
         EFabricatorController controller = partController;
         int coolantCache = controller.getCoolantCache();
@@ -60,7 +65,7 @@ public class EFabricatorWorker extends EFabricatorPart {
                     }
                 }
                 outputBuffer.add(AEItemStack.fromItemStack(craftWork.getOutput()));
-                completed++;
+                completed += parallelism;
             }
         }
 
@@ -197,10 +202,11 @@ public class EFabricatorWorker extends EFabricatorPart {
         private static final String STACK_SET_SIZE_TAG = "SSS";
         private static final String REPEAT_TAG = "R";
 
-        private final Deque<EFabricatorWorker.CraftWork> queue = new ArrayDeque<>();
+        private final Deque<CraftWork> queue = new ArrayDeque<>();
+        private int size = 0;
 
         public int size() {
-            return queue.size();
+            return size;
         }
 
         public boolean isEmpty() {
@@ -209,10 +215,17 @@ public class EFabricatorWorker extends EFabricatorPart {
 
         public void add(final EFabricatorWorker.CraftWork craftWork) {
             queue.add(craftWork);
+            size += craftWork.size;
         }
 
         public EFabricatorWorker.CraftWork poll() {
-            return queue.poll();
+            var i = queue.poll();
+            if (i != null) {
+                size -= i.size;
+            } else {
+                size = 0;
+            }
+            return i;
         }
 
         public EFabricatorWorker.CraftWork peek() {
@@ -228,7 +241,7 @@ public class EFabricatorWorker extends EFabricatorPart {
                 return nbt;
             }
 
-            List<ItemStack> stackSet = new ArrayList<>();
+            List<ItemStack> stackSet = new ObjectArrayList<>();
 
             // Queue
             NBTTagList queueTag = new NBTTagList();
@@ -267,7 +280,7 @@ public class EFabricatorWorker extends EFabricatorPart {
 
         public void readFromNBT(final NBTTagCompound nbt) {
             queue.clear();
-            List<ItemStack> stackSet = new ArrayList<>();
+            List<ItemStack> stackSet = new ObjectArrayList<>();
 
             // StackSet
             NBTTagCompound stackSetTag = nbt.getCompoundTag(STACK_SET_TAG);
@@ -295,13 +308,20 @@ public class EFabricatorWorker extends EFabricatorPart {
         private static final String REMAIN_TAG_PREFIX = "R#";
         private static final String REMAIN_SIZE_TAG = REMAIN_TAG_PREFIX + "S";
         private static final String OUTPUT_TAG = "O";
+        private static final String SIZE = "Z";
 
         private final ItemStack[] remaining;
         private final ItemStack output;
+        private int size;
 
-        public CraftWork(final ItemStack[] remaining, final ItemStack output) {
+        public CraftWork(final ItemStack[] remaining, final ItemStack output,final int size) {
             this.remaining = remaining;
             this.output = output;
+            this.size = Math.max(1,size);
+        }
+
+        public int getSize() {
+            return size;
         }
 
         public CraftWork(final NBTTagCompound nbt, final List<ItemStack> stackSet) {
@@ -311,6 +331,27 @@ public class EFabricatorWorker extends EFabricatorPart {
                 remaining[remainIdx] = setIdx == -1 ? ItemStack.EMPTY : stackSet.get(setIdx);
             }
             output = stackSet.get(nbt.getInteger(OUTPUT_TAG));
+            size = Math.max(1,nbt.getInteger(SIZE));
+        }
+
+        public CraftWork split(int amount){
+            final var i = Math.min(amount,this.size);
+            final var inputs = new ItemStack[this.remaining.length];
+            for (int ii = 0; ii < remaining.length; ii++) {
+                inputs[ii] = remaining[ii].splitStack(i);
+            }
+            final var output = this.output.copy();
+            if (size > 0) {
+                final var eachOutput = this.output.getCount() / size;
+                final var outCount = i * eachOutput;
+                output.setCount(outCount);
+                this.output.shrink(outCount);
+                size -= i;
+                return new CraftWork(inputs, output, i);
+            } else {
+                output.setCount(0);
+                return new CraftWork(inputs, output, 0);
+            }
         }
 
         public NBTTagCompound writeToNBT(final List<ItemStack> stackSet) {
@@ -346,12 +387,13 @@ public class EFabricatorWorker extends EFabricatorPart {
 
             stackSet.add(output);
             nbt.setShort(OUTPUT_TAG, (short) (stackSet.size() - 1));
+            nbt.setInteger(SIZE,size);
             return nbt;
         }
 
         public CraftWork copy() {
             ItemStack[] remaining = Arrays.stream(this.remaining).map(ItemStack::copy).toArray(ItemStack[]::new);
-            return new CraftWork(remaining, output.copy());
+            return new CraftWork(remaining, output.copy(),this.size);
         }
 
         @Override

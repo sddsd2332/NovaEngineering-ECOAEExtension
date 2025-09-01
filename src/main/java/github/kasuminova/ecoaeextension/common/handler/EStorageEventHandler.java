@@ -32,7 +32,7 @@ import net.minecraftforge.fml.relauncher.Side;
 public class EStorageEventHandler {
 
     public static final EStorageEventHandler INSTANCE = new EStorageEventHandler();
-    
+
     private static boolean canInteract(final EntityPlayer player, final IGridProxyable proxyable) {
         final IGridNode gn = proxyable.getProxy().getNode();
         if (gn != null) {

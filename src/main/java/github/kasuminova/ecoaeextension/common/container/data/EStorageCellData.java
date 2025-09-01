@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 
 @Desugar
 public record EStorageCellData(DriveStorageType type, DriveStorageLevel level, int usedTypes, long usedBytes) {
-    
+
     public static EStorageCellData from(final EStorageCellDrive drive) {
         AppEngCellInventory driveInv = drive.getDriveInv();
         ItemStack stack = driveInv.getStackInSlot(0);
@@ -48,5 +48,5 @@ public record EStorageCellData(DriveStorageType type, DriveStorageLevel level, i
         long usedBytes = cellInv.getUsedBytes();
         return new EStorageCellData(type, level, (int) storedTypes, usedBytes);
     }
-    
+
 }

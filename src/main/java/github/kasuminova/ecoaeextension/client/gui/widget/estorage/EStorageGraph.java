@@ -222,54 +222,6 @@ public class EStorageGraph extends Row {
         }
     }
 
-
-    public class ItemTypeGraph extends Graph {
-
-        protected final AnimationValue totalUsedItemTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
-        protected final AnimationValue totalMaxItemTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
-
-        public ItemTypeGraph(final EStorageGraph graphParent) {
-            super(graphParent,
-                    82, 29,
-                    59, 16,
-                    1,
-                    1, 197,
-                    59, 6,
-                    false, false);
-        }
-
-        @Override
-        public void update(final WidgetGui gui) {
-            super.update(gui);
-            if (!value.isAnimFinished()) {
-                label.setContents(Collections.singletonList(
-                        I18n.format("gui.estorage_controller.graph.item_type",
-                                NovaEngUtils.formatNumber((long) totalUsedItemTypes.get(), 1),
-                                NovaEngUtils.formatNumber((long) totalMaxItemTypes.get(), 1)
-                        ))
-                );
-            }
-        }
-
-        @Override
-        public boolean onGuiEvent(final GuiEvent event) {
-            if (event instanceof ESGUIDataUpdateEvent) {
-                int totalUsedItemTypes = 0;
-                int totalMaxItemTypes = 0;
-                for (final EStorageCellData data : controllerGUI.getCellDataList()) {
-                    if (data.type() == DriveStorageType.ITEM) {
-                        totalUsedItemTypes += data.usedTypes();
-                        totalMaxItemTypes += 315;
-                    }
-                }
-                this.totalUsedItemTypes.set(totalUsedItemTypes);
-                this.totalMaxItemTypes.set(totalMaxItemTypes);
-                value.set(totalUsedItemTypes <= 0 ? 0 : (double) totalUsedItemTypes / totalMaxItemTypes);
-            }
-            return super.onGuiEvent(event);
-        }
-    }
-
     public class FluidTypeGraph extends Graph {
 
         protected final AnimationValue totalUsedFluidTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
@@ -317,6 +269,52 @@ public class EStorageGraph extends Row {
         }
     }
 
+    public class ItemTypeGraph extends Graph {
+
+        protected final AnimationValue totalUsedItemTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
+        protected final AnimationValue totalMaxItemTypes = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);
+
+        public ItemTypeGraph(final EStorageGraph graphParent) {
+            super(graphParent,
+                    82, 29,
+                    59, 16,
+                    1,
+                    1, 197,
+                    59, 6,
+                    false, false);
+        }
+
+        @Override
+        public void update(final WidgetGui gui) {
+            super.update(gui);
+            if (!value.isAnimFinished()) {
+                label.setContents(Collections.singletonList(
+                        I18n.format("gui.estorage_controller.graph.item_type",
+                                NovaEngUtils.formatNumber((long) totalUsedItemTypes.get(), 1),
+                                NovaEngUtils.formatNumber((long) totalMaxItemTypes.get(), 1)
+                        ))
+                );
+            }
+        }
+
+        @Override
+        public boolean onGuiEvent(final GuiEvent event) {
+            if (event instanceof ESGUIDataUpdateEvent) {
+                int totalUsedItemTypes = 0;
+                int totalMaxItemTypes = 0;
+                for (final EStorageCellData data : controllerGUI.getCellDataList()) {
+                    if (data.type() == DriveStorageType.ITEM) {
+                        totalUsedItemTypes += data.usedTypes();
+                        totalMaxItemTypes += 315;
+                    }
+                }
+                this.totalUsedItemTypes.set(totalUsedItemTypes);
+                this.totalMaxItemTypes.set(totalMaxItemTypes);
+                value.set(totalUsedItemTypes <= 0 ? 0 : (double) totalUsedItemTypes / totalMaxItemTypes);
+            }
+            return super.onGuiEvent(event);
+        }
+    }
 
     public class GasTypeGraph extends Graph {
 
@@ -458,7 +456,6 @@ public class EStorageGraph extends Row {
             return super.onGuiEvent(event);
         }
     }
-
 
     public boolean getMekEngLoad() {
         return Mods.MEKENG.isPresent();

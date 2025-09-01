@@ -13,8 +13,6 @@ import java.util.Map;
 
 public class MachineCoolants {
 
-
-    //冷却配方
     public static final MachineCoolants INSTANCE = new MachineCoolants();
 
     private final Map<Fluid, Coolant> coolants = new Reference2ObjectLinkedOpenHashMap<>();

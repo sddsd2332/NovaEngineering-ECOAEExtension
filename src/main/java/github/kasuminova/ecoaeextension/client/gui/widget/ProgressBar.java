@@ -104,7 +104,7 @@ public class ProgressBar extends DynamicWidget {
         if (idx >= progressTextures.size()) {
             return Optional.of(progressTextures.get(progressTextures.size() - 1));
         } else {
-            return Optional.of(progressTextures.get(idx));
+            return Optional.of(progressTextures.get(Math.max(idx, 0)));
         }
     }
 
@@ -210,7 +210,7 @@ public class ProgressBar extends DynamicWidget {
     public boolean isRightToLeft() {
         return !leftToRight;
     }
-    
+
     public boolean isUpToDown() {
         return !leftToRight;
     }

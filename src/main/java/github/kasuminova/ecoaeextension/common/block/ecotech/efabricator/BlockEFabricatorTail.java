@@ -43,7 +43,7 @@ public class BlockEFabricatorTail extends BlockEFabricatorPart {
         this.setTranslationKey(ECOAEExtension.MOD_ID + '.' + "efabricator_tail_" + level);
     }
 
-    @javax.annotation.Nullable
+    @Nullable
     @Override
     public TileEntity createTileEntity(@Nonnull final World world, @Nonnull final IBlockState state) {
         return new EFabricatorTail();

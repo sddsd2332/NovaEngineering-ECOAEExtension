@@ -29,7 +29,7 @@ public class HeatStatisticPanel extends SizedColumn {
     public static final TextureProperties TEXTURE_BACKGROUND = new TextureProperties(
             GuiEFabricatorController.TEXTURES_ELEMENTS, 204, 24, WIDTH, HEIGHT
     );
-    
+
     private final BackgroundLabel energyUsage;
     private final BackgroundLabel activeCooling;
     private final ProgressBar energyUsageBar;
@@ -108,10 +108,10 @@ public class HeatStatisticPanel extends SizedColumn {
             if (data == null) {
                 return super.onGuiEvent(event);
             }
-            
+
             this.activeCooling.getLabel()
                     .setContents(Collections.singletonList(
-                            I18n.format("gui.efabricator.active_cooling", data.activeCooling() 
+                            I18n.format("gui.efabricator.active_cooling", data.activeCooling()
                                     ? I18n.format("gui.efabricator.active_cooling.on")
                                     : I18n.format("gui.efabricator.active_cooling.off")
                             )
@@ -124,7 +124,7 @@ public class HeatStatisticPanel extends SizedColumn {
             }
 
             int maxEnergy = EFabricatorWorker.MAX_ENERGY_CACHE * length;
-            this.energyUsageBar.setMaxProgress(maxEnergy) 
+            this.energyUsageBar.setMaxProgress(maxEnergy)
                     .setProgress(data.energyStored());
 
             int energyUsage = EFabricatorWorker.ENERGY_USAGE * length * queueDepth;

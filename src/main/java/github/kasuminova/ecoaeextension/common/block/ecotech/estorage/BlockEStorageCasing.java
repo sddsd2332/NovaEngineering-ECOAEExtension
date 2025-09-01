@@ -4,7 +4,7 @@ import github.kasuminova.ecoaeextension.ECOAEExtension;
 import net.minecraft.util.ResourceLocation;
 
 public class BlockEStorageCasing extends BlockEStorage {
-    
+
     public static final BlockEStorageCasing INSTANCE = new BlockEStorageCasing();
 
     protected BlockEStorageCasing() {

@@ -26,7 +26,7 @@ public class EStorageGraphBar extends DynamicWidget {
 
     public static final int TOP_TEX_X = 1;
     public static final int TOP_TEX_Y = 246;
-    
+
     public static final int MID_TEX_X = 34;
     public static final int MID_TEX_Y = 250;
     public static final int MID_TEX_HEIGHT = 4;
@@ -35,7 +35,7 @@ public class EStorageGraphBar extends DynamicWidget {
     public static final int BOTTOM_TEX_Y = 246;
 
     public static final int BOTTOM_AND_TOP_HEIGHT = 8;
-    
+
     protected final GuiEStorageController controllerGUI;
 
     protected AnimationValue percentage = AnimationValue.ofFinished(0, 500, .25, .1, .25, 1);

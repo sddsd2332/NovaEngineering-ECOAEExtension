@@ -48,13 +48,13 @@ public class BlockECalculatorParallelProc extends BlockECalculatorPart {
     @Nullable
     @Override
     public TileEntity createNewTileEntity(@Nonnull final World worldIn, final int meta) {
-        return new ECalculatorParallelProc(this.parallelism);
+        return new ECalculatorParallelProc();
     }
 
     @Nullable
     @Override
     public TileEntity createTileEntity(@Nonnull final World world, @Nonnull final IBlockState state) {
-        return new ECalculatorParallelProc(this.parallelism);
+        return new ECalculatorParallelProc();
     }
 
     @Nonnull

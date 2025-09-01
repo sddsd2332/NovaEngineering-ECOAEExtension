@@ -6,7 +6,7 @@ import github.kasuminova.ecoaeextension.client.gui.GuiEFabricatorController;
 public class EFGUIDataUpdateEvent extends GuiEvent {
 
     private final GuiEFabricatorController gui;
-    
+
     public EFGUIDataUpdateEvent(final GuiEFabricatorController gui) {
         super(null);
         this.gui = gui;

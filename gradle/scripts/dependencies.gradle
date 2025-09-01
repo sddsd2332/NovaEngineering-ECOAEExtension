@@ -80,7 +80,7 @@ dependencies {
     implementation(rfg.deobf(files("libs/theoneprobe-1.12-1.4.28.jar")))
     implementation(rfg.deobf(files("libs/FTBLib-5.4.7.2.jar")))
     implementation(rfg.deobf(files("libs/FTBUtilities-5.4.1.131.jar")))
-    implementation(rfg.deobf(files("libs/ae2-uel-v0.56.6-dev.jar")))
+    implementation(rfg.deobf(files("libs/ae2-uel-v0.56.7-dev.jar")))
     implementation(rfg.deobf(files("libs/FluidCraftforAE2-2.6.6-r.jar")))
     implementation(rfg.deobf(files("libs/MekanismEnergistics-0.1.5.jar")))
     implementation(rfg.deobf(files("libs/nae2-1.6.4-dev.jar")))
@@ -88,4 +88,5 @@ dependencies {
     implementation(rfg.deobf(files("libs/Mekanism-CE-Unofficial-All-9.9.1.221-dev.jar")))
     implementation(rfg.deobf(files("libs/geckolib-forge-1.12.2-3.0.31.jar")))
     implementation(rfg.deobf(files("libs/!configanytime-3.0.jar")))
+    implementation(rfg.deobf(files("libs/CrazyAE-1.12.2-v0.6.0.2.jar")))
 }

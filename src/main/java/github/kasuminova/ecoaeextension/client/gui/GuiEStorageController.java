@@ -63,7 +63,7 @@ public class GuiEStorageController extends GuiContainerDynamic<ContainerEStorage
     public void setEnergyData(final EStorageEnergyData energyData) {
         this.energyData = energyData;
     }
-    
+
     public void onDataReceived() {
         this.widgetController.postGuiEvent(new ESGUIDataUpdateEvent());
     }
@@ -71,7 +71,7 @@ public class GuiEStorageController extends GuiContainerDynamic<ContainerEStorage
     public void onGraphFocusUpdate(final Graph graph) {
         this.widgetController.postGuiEvent(new ESGraphFocusUpdateEvent(graph));
     }
-    
+
     public WidgetController getWidgetController() {
         return widgetController;
     }

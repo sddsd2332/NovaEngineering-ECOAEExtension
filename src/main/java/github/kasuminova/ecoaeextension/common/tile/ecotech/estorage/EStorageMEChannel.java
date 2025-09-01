@@ -88,7 +88,7 @@ public class EStorageMEChannel extends EStoragePart implements ICellContainer, I
             this.wasActive = currentActive;
             try {
                 this.proxy.getGrid().postEvent(new MENetworkCellArrayUpdate());
-            } catch (final GridAccessException e) {
+            } catch (final GridAccessException ignored) {
             }
         }
     }

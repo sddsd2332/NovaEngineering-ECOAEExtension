@@ -50,7 +50,7 @@ public class StatisticPanel extends SizedRow {
         TEXTURE_BACKGROUND.render(renderPos, gui);
         super.preRenderInternal(gui, renderSize, renderPos, mousePos);
     }
-    
+
     public static class Modules extends SizedColumn {
 
         public static final int WIDTH = 40;
@@ -139,7 +139,7 @@ public class StatisticPanel extends SizedRow {
             public static final TextureProperties L9 = new TextureProperties(
                     GuiEFabricatorController.TEXTURES_ELEMENTS, 209, 1, 5, 9
             );
-            
+
             private TextureProperties texture = L0;
 
             public Level() {
@@ -189,7 +189,7 @@ public class StatisticPanel extends SizedRow {
         public static final TextureProperties TEXTURE_BACKGROUND = new TextureProperties(
                 GuiEFabricatorController.TEXTURES_ELEMENTS, 42, 186, WIDTH, HEIGHT
         );
-        
+
         private final Info info;
         private final ProgressBar queueStatisticsBar;
 
@@ -293,7 +293,7 @@ public class StatisticPanel extends SizedRow {
         public static final TextureProperties TEXTURE_BACKGROUND = new TextureProperties(
                 GuiEFabricatorController.TEXTURES_ELEMENTS, 94, 186, WIDTH, HEIGHT
         );
-        
+
         private final Info info;
         private final ProgressBar parallelismBar;
 
@@ -348,7 +348,7 @@ public class StatisticPanel extends SizedRow {
 
             public static final int WIDTH = 51;
             public static final int HEIGHT = 32;
-            
+
             private final MultiLineLabel parallelism;
             private final MultiLineLabel parallelismLimit;
             private final MultiLineLabel parallelismOverflow;

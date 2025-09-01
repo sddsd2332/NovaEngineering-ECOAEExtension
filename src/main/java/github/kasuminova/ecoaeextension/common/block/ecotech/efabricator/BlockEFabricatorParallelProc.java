@@ -25,7 +25,7 @@ import java.util.List;
 @SuppressWarnings({"deprecation", "ArraysAsListWithZeroOrOneArgument"})
 public class BlockEFabricatorParallelProc extends BlockEFabricatorPart {
 
-    public static final BlockEFabricatorParallelProc L4 = new BlockEFabricatorParallelProc("l4", 
+    public static final BlockEFabricatorParallelProc L4 = new BlockEFabricatorParallelProc("l4",
             Arrays.asList(
                     new Modifier(EFabricatorParallelProc.Type.ADD, 24, false)
             ),

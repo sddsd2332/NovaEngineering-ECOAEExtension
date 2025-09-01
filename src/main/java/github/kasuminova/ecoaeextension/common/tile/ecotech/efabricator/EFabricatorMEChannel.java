@@ -20,6 +20,8 @@ import appeng.me.helpers.AENetworkProxy;
 import appeng.me.helpers.IGridProxyable;
 import appeng.me.helpers.MachineSource;
 import appeng.util.Platform;
+import com.glodblock.github.common.item.ItemFluidPacket;
+import com.glodblock.github.common.item.fake.FakeItemRegister;
 import com.glodblock.github.util.FluidCraftingPatternDetails;
 import github.kasuminova.mmce.common.util.PatternItemFilter;
 import github.kasuminova.ecoaeextension.common.block.ecotech.efabricator.BlockEFabricatorMEChannel;
@@ -28,6 +30,7 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.FluidStack;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -99,8 +102,8 @@ public class EFabricatorMEChannel extends EFabricatorPart implements ICraftingPr
         }
 
         if (!pattern.isCraftable()) {
-            if (pattern instanceof FluidCraftingPatternDetails) {
-                return pushFluidPattern((FluidCraftingPatternDetails) pattern);
+            if (pattern instanceof FluidCraftingPatternDetails f) {
+                return pushFluidPattern(f,table);
             }
             return false;
         }
@@ -111,21 +114,72 @@ public class EFabricatorMEChannel extends EFabricatorPart implements ICraftingPr
         }
 
         ItemStack[] remaining = new ItemStack[9];
+        int size = 0;
         for (int i = 0; i < Math.min(table.getSizeInventory(), 9); ++i) {
-            remaining[i] = Platform.getContainerItem(table.getStackInSlot(i));
+            var item = table.getStackInSlot(i);
+            if (item.isEmpty()){
+                remaining[i] = ItemStack.EMPTY;
+            } else {
+                if (size == 0) {
+                    size = item.getCount();
+                }
+                remaining[i] = getContainerItem(item);
+            }
         }
 
-        return partController.offerWork(new EFabricatorWorker.CraftWork(remaining, output));
+        output.setCount(output.getCount() * size);
+
+        return partController.offerWork(new EFabricatorWorker.CraftWork(remaining, output, size));
     }
 
-    protected boolean pushFluidPattern(FluidCraftingPatternDetails pattern) {
-        ItemStack[] remaining = new ItemStack[9];
-        Arrays.fill(remaining, ItemStack.EMPTY);
-
+    protected boolean pushFluidPattern(final FluidCraftingPatternDetails pattern,final InventoryCrafting table) {
         IAEItemStack[] outputs = pattern.getOutputs();
         ItemStack output = outputs[0] != null ? outputs[0].getCachedItemStack(outputs[0].getStackSize()) : ItemStack.EMPTY;
 
-        return partController.offerWork(new EFabricatorWorker.CraftWork(remaining, output));
+        if (output.isEmpty())return false;
+
+        ItemStack[] remaining = new ItemStack[9];
+        int size = 0;
+        for (int i = 0; i < Math.min(table.getSizeInventory(), 9); ++i) {
+            var item = table.getStackInSlot(i);
+            if (item.isEmpty()){
+                remaining[i] = ItemStack.EMPTY;
+            } else {
+                if (size == 0) {
+                    size = item.getCount();
+                    if (item.getItem() instanceof ItemFluidPacket) {
+                        var amount = ((FluidStack) FakeItemRegister.getStack(item)).amount;
+                        var pamount = ((FluidStack) FakeItemRegister.getStack(pattern.getInputs()[i])).amount;
+                        size = amount/pamount;
+                    }
+                }
+                remaining[i] = getContainerItem(item);
+            }
+        }
+
+        output.setCount(output.getCount() * size);
+
+        return partController.offerWork(new EFabricatorWorker.CraftWork(remaining, output, size));
+    }
+
+    private static ItemStack getContainerItem(ItemStack stackInSlot) {
+        if (stackInSlot == null) {
+            return ItemStack.EMPTY;
+        } else {
+            Item i = stackInSlot.getItem();
+            if (i != null && i.hasContainerItem(stackInSlot)) {
+                ItemStack ci = i.getContainerItem(stackInSlot);
+                if (!ci.isEmpty() && ci.isItemStackDamageable() && ci.getItemDamage() == ci.getMaxDamage()) {
+                    ci = ItemStack.EMPTY;
+                }
+
+                ci.setCount(stackInSlot.getCount());
+                return ci;
+            } else if (!stackInSlot.isEmpty()) {
+                stackInSlot.setCount(0);
+                return stackInSlot;
+            } else return ItemStack.EMPTY;
+        }
     }
 
     public boolean insertPattern(final ItemStack patternStack) {
@@ -143,7 +197,7 @@ public class EFabricatorMEChannel extends EFabricatorPart implements ICraftingPr
         if (partController != null) {
             return partController.isQueueFull();
         }
-        return false;
+        return true;
     }
 
     // Misc

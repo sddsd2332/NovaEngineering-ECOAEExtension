@@ -141,7 +141,7 @@ public abstract class EPartController<P extends EPart<?>> extends TileCustomCont
         if (getControllerBlock().isInstance(state.getBlock())) {
             controllerRotation = state.getValue(FacingProp.HORIZONTALS);
         } else {
-            ECOAEExtension.log.warn("Invalid EPartController block at " + getPos() + " !");
+            ECOAEExtension.log.warn("Invalid EPartController block at {} !", getPos());
             controllerRotation = EnumFacing.NORTH;
         }
     }

@@ -1,10 +1,10 @@
 package github.kasuminova.ecoaeextension.common.registry;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class GenericRegistryPrimer {
     private GenericRegistryPrimer() {
     }
 
-    private final Map<Type, List<IForgeRegistryEntry<?>>> primed = new HashMap<>();
+    private final Map<Type, List<IForgeRegistryEntry<?>>> primed = new Object2ObjectOpenHashMap<>();
 
     public <V extends IForgeRegistryEntry<V>> V register(V entry) {
         Class<V> type = entry.getRegistryType();

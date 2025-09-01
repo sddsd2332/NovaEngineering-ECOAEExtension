@@ -65,7 +65,7 @@ public class EFabricatorInfoProvider implements IProbeInfoProvider {
         int color = ColorUtils.getGradientColor(new Color[]{
                 LOW_COLOR, LOW_COLOR, LOW_COLOR, MID_COLOR, MID_COLOR, FULL_COLOR, FULL_COLOR
         }, 0xCC, percent).getRGB();
-        
+
         // Energy bar
         int energyCache = worker.getEnergyCache();
         int maxEnergyCache = worker.getMaxEnergyCache();

@@ -57,8 +57,8 @@ public class ECalculatorInfoProvider implements IProbeInfoProvider {
     private static void processThreadCoreInfo(final IProbeInfo probeInfo, final ECalculatorThreadCore threadCore) {
         final boolean online = threadCore.getController() != null;
         IProbeInfo box = newBox(probeInfo);
-        box.text("{*top.ecalculator.thread_core.status*}" + 
-                 (online ? "{*top.ecalculator.thread_core.status.online*}" : "{*top.ecalculator.thread_core.status.offline*}")
+        box.text("{*top.ecalculator.thread_core.status*}" +
+                (online ? "{*top.ecalculator.thread_core.status.online*}" : "{*top.ecalculator.thread_core.status.offline*}")
         );
         if (!online) {
             return;
@@ -77,8 +77,8 @@ public class ECalculatorInfoProvider implements IProbeInfoProvider {
                 .progress((int) (percent * 75), 75, probeInfo.defaultProgressStyle()
                         .prefix(progressStr)
                         .filledColor(color)
-                        .alternateFilledColor(darkenColor(color, .8))
-                        .borderColor(lightenColor(color, .8))
+                        .alternateFilledColor(darkenColor(color))
+                        .borderColor(lightenColor(color))
                         .backgroundColor(0xFF000000)
                         .numberFormat(NumberFormat.NONE)
                         .width(75)
@@ -142,8 +142,8 @@ public class ECalculatorInfoProvider implements IProbeInfoProvider {
                 .progress((int) (percent * 150), 150, probeInfo.defaultProgressStyle()
                         .prefix(progressStr)
                         .filledColor(color)
-                        .alternateFilledColor(darkenColor(color, .8))
-                        .borderColor(lightenColor(color, .8))
+                        .alternateFilledColor(darkenColor(color))
+                        .borderColor(lightenColor(color))
                         .backgroundColor(0xFF000000)
                         .numberFormat(NumberFormat.NONE)
                         .width(150)
@@ -162,8 +162,8 @@ public class ECalculatorInfoProvider implements IProbeInfoProvider {
                 .progress((int) (percent * 100), 100, probeInfo.defaultProgressStyle()
                         .prefix(progressStr)
                         .filledColor(color)
-                        .alternateFilledColor(darkenColor(color, .8))
-                        .borderColor(lightenColor(color, .8))
+                        .alternateFilledColor(darkenColor(color))
+                        .borderColor(lightenColor(color))
                         .backgroundColor(0xFF000000)
                         .numberFormat(NumberFormat.NONE)
                         .width(100)
@@ -211,19 +211,19 @@ public class ECalculatorInfoProvider implements IProbeInfoProvider {
 
     // Utility methods to darken and lighten colors
 
-    private static int darkenColor(int color, double factor) {
+    private static int darkenColor(int color) {
         int a = (color >> 24) & 0xFF;
-        int r = (int) (((color >> 16) & 0xFF) * factor);
-        int g = (int) (((color >> 8) & 0xFF) * factor);
-        int b = (int) ((color & 0xFF) * factor);
+        int r = (int) (((color >> 16) & 0xFF) * 0.8);
+        int g = (int) (((color >> 8) & 0xFF) * 0.8);
+        int b = (int) ((color & 0xFF) * 0.8);
         return (a << 24) | (r << 16) | (g << 8) | b;
     }
 
-    private static int lightenColor(int color, double factor) {
+    private static int lightenColor(int color) {
         int a = (color >> 24) & 0xFF;
-        int r = Math.min(255, (int) (((color >> 16) & 0xFF) / factor));
-        int g = Math.min(255, (int) (((color >> 8) & 0xFF) / factor));
-        int b = Math.min(255, (int) ((color & 0xFF) / factor));
+        int r = Math.min(255, (int) (((color >> 16) & 0xFF) / 0.8));
+        int g = Math.min(255, (int) (((color >> 8) & 0xFF) / 0.8));
+        int b = Math.min(255, (int) ((color & 0xFF) / 0.8));
         return (a << 24) | (r << 16) | (g << 8) | b;
     }
 
