@@ -276,7 +276,7 @@ public class EStorageCellInventory<T extends IAEStack<T>> extends AbstractCellIn
             return null;
         }
 
-        final long size = Math.min(Integer.MAX_VALUE, request.getStackSize());
+        final long size =  request.getStackSize();
 
         T results = null;
 

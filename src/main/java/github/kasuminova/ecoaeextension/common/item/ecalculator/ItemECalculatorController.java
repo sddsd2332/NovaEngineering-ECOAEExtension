@@ -6,6 +6,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
@@ -18,7 +19,7 @@ public class ItemECalculatorController extends ItemBlockController {
     }
 
     @Override
-    public void addInformation(final ItemStack stack, @Nullable final World worldIn, final List<String> tooltip, final ITooltipFlag flagIn) {
+    public void addInformation(final @NotNull ItemStack stack, @Nullable final World worldIn, final List<String> tooltip, final @NotNull ITooltipFlag flagIn) {
         tooltip.add(I18n.format("novaeng.extendable_calculate_subsystem.info.0"));
         tooltip.add(I18n.format("novaeng.extendable_calculate_subsystem.info.1"));
         tooltip.add(I18n.format("novaeng.extendable_calculate_subsystem.info.2"));

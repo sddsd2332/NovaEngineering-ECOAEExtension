@@ -7,6 +7,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class ItemECalculatorThreadCore extends ItemBlock {
     }
 
     @Override
-    public void addInformation(final ItemStack stack, @Nullable final World worldIn, final List<String> tooltip, final ITooltipFlag flagIn) {
+    public void addInformation(final @NotNull ItemStack stack, @Nullable final World worldIn, final @NotNull List<String> tooltip, final @NotNull ITooltipFlag flagIn) {
         BlockECalculatorThreadCore threadCore = (BlockECalculatorThreadCore) this.block;
         if (threadCore instanceof BlockECalculatorThreadCoreHyper) {
             tooltip.add(I18n.format("novaeng.ecalculator_thread_core_hyper.info.0"));

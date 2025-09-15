@@ -136,8 +136,13 @@ dependencies {
             transitive = false
         }
         annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
-        annotationProcessor 'com.google.guava:guava:24.1.1-jre'
-        annotationProcessor 'com.google.code.gson:gson:2.8.6'
+        annotationProcessor 'com.google.guava:guava:32.0.1-android'
+        annotationProcessor 'com.google.code.gson:gson:2.8.9'
+        compileOnlyApi "org.jetbrains:annotations:24.1.0"
+        annotationProcessor "org.jetbrains:annotations:24.1.0"
+        compileOnly "org.projectlombok:lombok:1.18.24"
+        annotationProcessor "org.projectlombok:lombok:1.18.24"
+
         annotationProcessor(mixin) {
             transitive = false
         }

@@ -4,6 +4,7 @@ import appeng.container.AEBaseContainer;
 import appeng.container.slot.SlotRestrictedInput;
 import appeng.tile.inventory.AppEngInternalInventory;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.efabricator.EFabricatorPatternBus;
+import lombok.Getter;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class ContainerEFabricatorPatternBus extends AEBaseContainer {
@@ -11,6 +12,7 @@ public class ContainerEFabricatorPatternBus extends AEBaseContainer {
     public static final int ROWS = 6;
     public static final int COLS = 12;
 
+    @Getter
     private final EFabricatorPatternBus owner;
 
     public ContainerEFabricatorPatternBus(final EFabricatorPatternBus owner, final EntityPlayer player) {
@@ -28,8 +30,5 @@ public class ContainerEFabricatorPatternBus extends AEBaseContainer {
         }
     }
 
-    public EFabricatorPatternBus getOwner() {
-        return owner;
-    }
 
 }

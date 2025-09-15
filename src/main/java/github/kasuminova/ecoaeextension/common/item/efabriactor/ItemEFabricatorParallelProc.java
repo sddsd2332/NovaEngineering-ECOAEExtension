@@ -6,6 +6,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class ItemEFabricatorParallelProc extends ItemBlock {
     }
 
     @Override
-    public void addInformation(final ItemStack stack, @Nullable final World worldIn, final List<String> tooltip, final ITooltipFlag flagIn) {
+    public void addInformation(final @NotNull ItemStack stack, @Nullable final World worldIn, final List<String> tooltip, final @NotNull ITooltipFlag flagIn) {
         BlockEFabricatorParallelProc proc = (BlockEFabricatorParallelProc) this.block;
         tooltip.add(I18n.format("novaeng.efabricator_parallel_proc.info.0"));
         tooltip.add(I18n.format("novaeng.efabricator_parallel_proc.info.1"));

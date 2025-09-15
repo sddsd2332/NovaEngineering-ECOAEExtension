@@ -14,6 +14,8 @@ import github.kasuminova.ecoaeextension.common.container.ContainerEStorageContro
 import github.kasuminova.ecoaeextension.common.container.data.EStorageCellData;
 import github.kasuminova.ecoaeextension.common.container.data.EStorageEnergyData;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageController;
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,6 +24,8 @@ import net.minecraft.util.ResourceLocation;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
+@Getter
 public class GuiEStorageController extends GuiContainerDynamic<ContainerEStorageController> {
     public static final ResourceLocation TEXTURES_BACKGROUND = new ResourceLocation(
             ECOAEExtension.MOD_ID, "textures/gui/estorage_controller.png");
@@ -48,21 +52,6 @@ public class GuiEStorageController extends GuiContainerDynamic<ContainerEStorage
         super.drawGuiContainerBackgroundLayer(partialTicks, mouseX, mouseY);
     }
 
-    public void setCellDataList(final List<EStorageCellData> cellDataList) {
-        this.cellDataList = cellDataList;
-    }
-
-    public List<EStorageCellData> getCellDataList() {
-        return cellDataList;
-    }
-
-    public EStorageEnergyData getEnergyData() {
-        return energyData;
-    }
-
-    public void setEnergyData(final EStorageEnergyData energyData) {
-        this.energyData = energyData;
-    }
 
     public void onDataReceived() {
         this.widgetController.postGuiEvent(new ESGUIDataUpdateEvent());

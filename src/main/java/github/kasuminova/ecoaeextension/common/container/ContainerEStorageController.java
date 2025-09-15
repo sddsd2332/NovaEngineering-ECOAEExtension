@@ -2,23 +2,19 @@ package github.kasuminova.ecoaeextension.common.container;
 
 import github.kasuminova.ecoaeextension.common.tile.ecotech.estorage.EStorageController;
 import hellfirepvp.modularmachinery.common.container.ContainerBase;
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Slot;
 
+@Setter
+@Getter
 public class ContainerEStorageController extends ContainerBase<EStorageController> {
 
     protected int tickExisted = 0;
 
     public ContainerEStorageController(final EStorageController owner, final EntityPlayer opening) {
         super(owner, opening);
-    }
-
-    public int getTickExisted() {
-        return tickExisted;
-    }
-
-    public void setTickExisted(final int tickExisted) {
-        this.tickExisted = tickExisted;
     }
 
     @Override

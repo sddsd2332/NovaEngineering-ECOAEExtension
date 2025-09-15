@@ -9,6 +9,7 @@ import github.kasuminova.ecoaeextension.client.gui.widget.efabricator.event.EFGU
 import github.kasuminova.ecoaeextension.common.container.ContainerEFabricatorController;
 import github.kasuminova.ecoaeextension.common.container.data.EFabricatorData;
 import github.kasuminova.ecoaeextension.common.tile.ecotech.efabricator.EFabricatorController;
+import lombok.Getter;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,6 +26,7 @@ public class GuiEFabricatorController extends GuiContainerDynamic<ContainerEFabr
     public static final ResourceLocation TEXTURES_ELEMENTS = new ResourceLocation(
             ECOAEExtension.MOD_ID, "textures/gui/efabricator_elements.png");
 
+    @Getter
     private EFabricatorData data = null;
 
     public GuiEFabricatorController(final EFabricatorController controller, final EntityPlayer opening) {
@@ -57,8 +59,5 @@ public class GuiEFabricatorController extends GuiContainerDynamic<ContainerEFabr
         this.widgetController.postGuiEvent(new EFGUIDataUpdateEvent(this));
     }
 
-    public EFabricatorData getData() {
-        return data;
-    }
 
 }
