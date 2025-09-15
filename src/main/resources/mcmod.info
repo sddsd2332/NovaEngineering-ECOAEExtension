@@ -19,14 +19,16 @@
         "jei",
         "theoneprobe",
         "ae2fc@[2.6.3-r,)",
-        "lumenized"
+        "lumenized",
+        "random_complement"
       ],
       "requiredMods": [
         "forge@[14.23.5.2768,)",
         "jei@[4.25.0,)",
         "modularmachinery@[2.1.0,)",
         "appliedenergistics2@[v0.56.4,)",
-        "mixinbooter@[8.0,)"
+        "mixinbooter@[8.0,)",
+        "random_complement@[1.6.4,)"
       ]
   }
 ]
