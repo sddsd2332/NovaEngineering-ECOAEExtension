@@ -16,7 +16,7 @@ item.ecoaeextension.ecalculator_cell_64m.name=§9ECO - §bCE4 §b闪存晶阵
 item.ecoaeextension.ecalculator_cell_1024m.name=§9ECO - §6CE6 §b闪存晶阵
 item.ecoaeextension.ecalculator_cell_16384m.name=§9ECO - §5CE9 §b闪存晶阵
 
-novaeng.ecalculator_cell.insert.tip=蹲下时手持矩阵并右击驱动器以插入晶阵。
+novaeng.ecalculator_cell.insert.tip=蹲下时手持晶阵并右击驱动器以插入晶阵。
 novaeng.ecalculator_cell.extract.tip=蹲下时空手并右击驱动器以取出晶阵。
 novaeng.ecalculator_cell.tip.0=§b闪存晶阵§7为§9计算子系统§7提供§a内存存储§7。
 novaeng.ecalculator_cell.tip.1=§b闪存晶阵§7是存储矩阵的高速存取特化版本。
